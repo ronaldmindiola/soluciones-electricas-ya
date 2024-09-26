@@ -39,8 +39,8 @@ importers:
         specifier: ^2.4.1
         version: 2.4.1
       '@preline/tabs':
-        specifier: ^2.4.1
-        version: 2.4.1
+        specifier: ^2.5.0
+        version: 2.5.0
       '@types/react':
         specifier: ^18.3.8
         version: 18.3.9
@@ -685,8 +685,8 @@ packages:
   '@preline/overlay@2.4.1':
     resolution: {integrity: sha512-ZchnVlntiIopOOkDKClVpRryVDGvGPswq4911wl0ZAjOdag09nTs2KKJ4qet9AYn1/o2uOGexDvIAJ6iIAakRQ==}
 
-  '@preline/tabs@2.4.1':
-    resolution: {integrity: sha512-L6kpKULse3c5w58oELQ5kSlrKkHut1wadwf9rUUrbMFbGeB/4CKEx+KGFyDqN/jTkDsll+fj8k5rK8jc4wxpdw==}
+  '@preline/tabs@2.5.0':
+    resolution: {integrity: sha512-JdMwRCtbJ0G9goqU+6214/ncfJX8zthEeLl1i9YYyeFLqTJvXPTIW5MWKyXpR4Gi1RUjr2NnT86Abtjp97bESg==}
 
   '@rollup/pluginutils@4.2.1':
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
@@ -3656,7 +3656,7 @@ snapshots:
 
   '@preline/overlay@2.4.1': {}
 
-  '@preline/tabs@2.4.1': {}
+  '@preline/tabs@2.5.0': {}
 
   '@rollup/pluginutils@4.2.1':
     dependencies:
