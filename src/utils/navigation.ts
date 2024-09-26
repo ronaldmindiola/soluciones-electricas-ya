@@ -1,38 +1,39 @@
 // An array of links for navigation bar
 const navBarLinks = [
-  { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
-  { name: "Services", url: "/services" },
-  { name: "Blog", url: "/blog" },
-  { name: "Contact", url: "/contact" },
+  { name: "Inicio", url: "/" },
+  { name: "Productos", url: "/productos" },
+  { name: "Servicios", url: "/servicios" },
+  { name: "Blog", url: "/#" },
+  { name: "Contacto", url: "/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Ecosistema",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Herramientas & Equipos", url: "/herramientas-equipos" },
+      { name: "Servicios Eléctricos", url: "/servicios-electricos" },
+      { name: "Proyectos Destacados", url: "/proyectos-destacados" },
     ],
   },
   {
-    section: "Company",
+    section: "Empresa",
     links: [
-      { name: "About us", url: "#" },
+      { name: "Sobre Nosotros", url: "/nosotros" },
       { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Contacto", url: "/contact" },
     ],
   },
 ];
+
+
 // An object of links for social icons
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
+  facebook: "https://www.facebook.com/SolucionesElectricasYA",
+  x: "https://twitter.com/SolucionesYA",
+  github: "https://github.com/SolucionesElectricasYA",
+  linkedin: "https://www.linkedin.com/company/solucioneselectricasya",
+  instagram: "https://www.instagram.com/solucioneselectricasya",
 };
 
 export default {

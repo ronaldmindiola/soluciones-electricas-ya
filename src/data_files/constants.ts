@@ -1,12 +1,12 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "ScrewFast",
-  tagline: "Top-quality Hardware Tools",
-  description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
-  description_short: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
-  url: "https://screwfast.uk",
-  author: "Emil Gulamov",
+  title: "Soluciones Eléctrica Ya",
+  tagline: "Soluciones Eléctricas de Alta Calidad para Proyectos Profesionales",
+  description: "Soluciones Eléctricas YA ofrece herramientas eléctricas de primera calidad y servicios especializados para garantizar el éxito de tus proyectos. Comienza a explorar nuestras soluciones y contacta a nuestro equipo para asegurar eficiencia y confiabilidad en cada instalación.",
+  description_short: "Soluciones Eléctricas YA ofrece herramientas eléctricas de alta calidad y servicios especializados para cubrir todas las necesidades de tus proyectos.",
+  url: "https://solucioneselectricasya.com",
+  author: "Ronald Mindiola",
 };
 
 export const SEO = {
@@ -33,7 +33,8 @@ export const OG = {
   locale: "en_US",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: : Hardware Tools & Construction Services`,
-  description: "Equip your projects with ScrewFast's top-quality hardware tools and expert construction services. Trusted by industry leaders, ScrewFast offers simplicity, affordability, and reliability. Experience the difference with user-centric design and cutting-edge tools. Start exploring now!",
+  title: `${SITE.title}: Herramientas Eléctricas & Servicios de Instalación`,
+  description: "Equipa tus proyectos con las herramientas eléctricas de primera calidad y servicios de instalación expertos de Soluciones Eléctricas YA. Con la confianza de líderes en la industria, ofrecemos soluciones simples, asequibles y confiables. Experimenta la diferencia con un diseño centrado en el usuario y tecnología de vanguardia. ¡Comienza a explorar ahora!",
+
   image: ogImageSrc,
 };
