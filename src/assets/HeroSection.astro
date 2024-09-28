@@ -1,11 +1,10 @@
 ---
 // Import the necessary dependencies
-import BrandLogo from "@/components/BrandLogo.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import { Image } from "astro:assets";
-import { motion } from 'framer-motion'
+import yaLogoDark from '../assets/yaLogoDark.png'
 
 // Define props from Astro
 const {
@@ -47,18 +46,30 @@ interface Props {
 
 <!-- Defining a grid container that holds all the content -->
 <section
-  class="mx-auto grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
+  class="mx-auto grid max-w-[85rem] gap-4 px-4 py-7 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
 >
   <!-- Title and description -->
-   
   <div>
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
-    <h1
-      class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
-    >
-      <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
-      <Fragment set:html={title} />
-    </h1>
+    <div class="flex items-center"> <!-- Añadimos items-center para la alineación vertical -->
+      <div class="flex flex-col">
+        <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+          Soluciones
+        </h1>
+        <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+          Eléctricas
+        </h1>
+      </div>
+      <div class="ml-2 flex items-center">
+        <Image
+          src={yaLogoDark}
+          class="inline"
+          alt="Logo Soluciones Eléctricas."
+          height="128"
+        />
+      </div>
+    </div>
+    
     {
       subTitle && (
         <p class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5">
@@ -90,21 +101,25 @@ interface Props {
       )
     }
   </div>
+  
   <!-- Hero Image Section -->
   <div class="flex w-full">
     <div class="top-12 overflow-hidden">
       {
         src && alt && (
-          <Image
-            src={src}
-            alt={alt}
-            class="h-full w-full scale- object-cover object-center rounded-2xl hover:scale-125"
-            draggable={"false"}
-            loading={"eager"}
-            format={"avif"}
-          />
+          <div>
+            <Image
+              src={src}
+              alt={alt}
+              class="h-full w-full scale- object-cover object-center rounded-sm hover:scale-125"
+              draggable={"false"}
+              loading={"eager"}
+              format={"avif"}
+            />
+          </div>
         )
       }
     </div>
   </div>
 </section>
+

@@ -1,68 +1,27 @@
 ---
-console.log(Astro.props)
+import { Image } from "astro:assets"
+import logoDark from '../assets/yaLogoDark.png'
+import logoLight from '../assets/yaLogoLight.png'
+
+const { width, height, alt, dark=true } = Astro.props;
 ---
-<svg
-  {...Astro.props}
-  viewBox="0 0 800 512"
-  fill="none"
->
+
+<div class="flex items-center">
+
+  <Image 
+    src={logoLight} 
+    alt="Logo Light" 
+    width={48} 
+    height={48} 
+    class="block dark:hidden" 
+  />
   
-<g filter="url(#filter0_df_7_2)">
-<path d="M89.6364 217.818H146L169.636 293.455H171.455L220.182 217.818H276.545L187.091 345.455L177.273 404H127.091L136.909 345.455L89.6364 217.818ZM245.397 404H190.852L283.215 217.818H352.306L382.852 404H328.306L310.125 269.091H308.67L245.397 404ZM247.579 330.545H350.125L343.579 368.364H241.034L247.579 330.545Z" fill="#FACC15"/>
-</g>
-<g filter="url(#filter1_f_7_2)">
-<path d="M476.459 179.21C476.459 172.282 483.959 167.951 489.959 171.416L512.823 184.616C518.823 188.08 518.823 196.741 512.823 200.205L489.959 213.405C483.959 216.869 476.459 212.539 476.459 205.611L476.459 179.21Z" fill="#FACC15"/>
-</g>
-<g filter="url(#filter2_f_7_2)">
-<path d="M446.341 175.745C449.186 170.84 455.394 169.293 460.208 172.29V172.29C465.021 175.286 466.617 181.691 463.773 186.596L456.618 198.933C453.773 203.837 447.565 205.384 442.751 202.388V202.388C437.937 199.392 436.341 192.986 439.186 188.082L446.341 175.745Z" fill="#171717"/>
-</g>
-<g filter="url(#filter3_f_7_2)">
-<path d="M409.058 175.745C411.902 170.84 418.111 169.293 422.924 172.29V172.29C427.738 175.286 429.334 181.691 426.489 186.596L393.149 244.08C390.305 248.985 384.096 250.532 379.283 247.536V247.536C374.469 244.539 372.873 238.134 375.718 233.229L409.058 175.745Z" fill="#EA580C"/>
-</g>
-<g filter="url(#filter4_f_7_2)">
-<path d="M371.774 175.745C374.619 170.84 380.827 169.293 385.641 172.29V172.29C390.455 175.286 392.051 181.691 389.206 186.596L355.866 244.08C353.021 248.985 346.813 250.532 341.999 247.536V247.536C337.186 244.539 335.589 238.134 338.434 233.229L371.774 175.745Z" fill="#EA580C"/>
-</g>
-<g filter="url(#filter5_f_7_2)">
-<path d="M334.491 176.784C337.336 171.879 343.544 170.332 348.358 173.328V173.328C353.171 176.325 354.767 182.73 351.923 187.635L318.582 245.119C315.738 250.024 309.529 251.571 304.716 248.575V248.575C299.902 245.578 298.306 239.173 301.151 234.268L334.491 176.784Z" fill="#EA580C"/>
-</g>
-<defs>
-<filter id="filter0_df_7_2" x="85.6364" y="217.318" width="301.215" height="194.682" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="2"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7_2"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7_2" result="shape"/>
-<feGaussianBlur stdDeviation="0.25" result="effect2_foregroundBlur_7_2"/>
-</filter>
-<filter id="filter1_f_7_2" x="475.759" y="169.496" width="42.2641" height="45.828" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="0.35" result="effect1_foregroundBlur_7_2"/>
-</filter>
-<filter id="filter2_f_7_2" x="437.076" y="170.062" width="28.8064" height="34.5537" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="0.35" result="effect1_foregroundBlur_7_2"/>
-</filter>
-<filter id="filter3_f_7_2" x="373.608" y="170.062" width="54.9914" height="79.7013" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="0.35" result="effect1_foregroundBlur_7_2"/>
-</filter>
-<filter id="filter4_f_7_2" x="336.324" y="170.062" width="54.9914" height="79.7013" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="0.35" result="effect1_foregroundBlur_7_2"/>
-</filter>
-<filter id="filter5_f_7_2" x="299.041" y="171.101" width="54.9914" height="79.7013" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="0.35" result="effect1_foregroundBlur_7_2"/>
-</filter>
-</defs>
-  
-  
-</svg>
+  {/* Logo para el modo oscuro */}
+  <Image 
+    src={logoDark} 
+    alt="Logo Dark" 
+    width={48} 
+    height={48} 
+    class="hidden dark:block" 
+  />
+</div>

@@ -4,7 +4,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
-import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSection from "@/assets/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
@@ -36,7 +36,7 @@ const avatarSrcs: Array<string> = [
   
 
   <HeroSection
-    title={`Soluciones Eléctricas<span class="text-red-700 dark:text-yellow-400 animate-fadeIn"> YA!</span>`}
+    title={`Soluciones Eléctricas Ya!`}
     subTitle="Innovación eléctrica al alcance de tu mano. Más de 20 años encendiendo tus ideas."
     primaryBtn="Descubre Nuestras Soluciones"
     primaryBtnURL="/productos"
@@ -65,35 +65,37 @@ const avatarSrcs: Array<string> = [
   />
 
   <FeaturesNavs
-    title={`Personaliza <span class="block text-yellow-500 dark:text-yellow-400">Soluciones Eléctricas YA</span> para que se adapten perfectamente a tus necesidades eléctricas y de iluminación.`}
-    tabs={[
-      {
-        heading: "Herramientas de Vanguardia",
-        content:
-          "Impulsa tus proyectos con las soluciones de vanguardia de Soluciones Eléctricas YA. Descubre una mayor eficiencia en la gestión de instalaciones eléctricas con nuestras tecnologías avanzadas.",
-        svg: "tools",
-        src: tools,
-        alt: "Herramientas y equipos eléctricos en una obra en construcción",
-        first: true,
-      },
-      {
-        heading: "Interfaces Intuitivas",
-        content:
-          "Gestiona fácilmente tus proyectos con las interfaces intuitivas de Soluciones Eléctricas YA. Organiza y supervisa la instalación de sistemas eléctricos con plataformas diseñadas para una gestión ágil y eficiente.",
-        svg: "dashboard",
-        src: dashboard,
-        alt: "Captura de pantalla o representación gráfica de una plataforma de gestión intuitiva",
-        second: true,
-      },
-      {
-        heading: "Características Robustas",
-        content:
-          "Minimiza la complejidad y maximiza la productividad. Las características robustas de Soluciones Eléctricas YA están diseñadas para optimizar cada etapa del proceso eléctrico y de iluminación, entregando resultados excepcionales.",
-        svg: "house",
-        src: construction,
-        alt: "Estructura metálica en construcción durante el día",
-      },
-    ]}
+  title={`Personaliza <span class="block text-yellow-500 dark:text-yellow-400">Soluciones Eléctricas YA</span> para adaptarse a tus necesidades de iluminación.`}
+
+  tabs={[
+    {
+      heading: "Herramientas de Vanguardia",
+      content:
+        "Impulsa tus proyectos con soluciones avanzadas de Soluciones Eléctricas YA y mejora la eficiencia en la gestión de instalaciones eléctricas.",
+      svg: "tools",
+      src: tools,
+      alt: "Herramientas y equipos eléctricos en obra",
+      first: true,
+    },
+    {
+      heading: "Interfaces Intuitivas",
+      content:
+        "Gestiona tus proyectos con nuestras interfaces intuitivas, organizando y supervisando instalaciones eléctricas de forma ágil.",
+      svg: "dashboard",
+      src: dashboard,
+      alt: "Plataforma de gestión intuitiva",
+      second: true,
+    },
+    {
+      heading: "Características Robustas",
+      content:
+        "Maximiza la productividad con características diseñadas para optimizar cada etapa del proceso eléctrico, logrando resultados excepcionales.",
+      svg: "house",
+      src: construction,
+      alt: "Estructura metálica en construcción",
+    },
+  ]}
+  
   />
 
   <TestimonialsSection
