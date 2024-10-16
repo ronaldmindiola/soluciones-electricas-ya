@@ -29,6 +29,9 @@ importers:
       '@preline/accordion':
         specifier: ^2.4.1
         version: 2.4.1
+      '@preline/carousel':
+        specifier: ^2.5.0
+        version: 2.5.0
       '@preline/collapse':
         specifier: ^2.4.1
         version: 2.4.1
@@ -672,6 +675,9 @@ packages:
 
   '@preline/accordion@2.4.1':
     resolution: {integrity: sha512-gaa5Y6hn5ZV/70L33d6aFXfzx9pjbdNoIsdGg5P5TNLBQglQKAGrAm+4d+qUKzZx43A+Z8D7CIGZIWS2gZU+aA==}
+
+  '@preline/carousel@2.5.0':
+    resolution: {integrity: sha512-sRsoS8A6binMAxgB22sKUeSNCvWkXADGA8Qpb/qRSWna6c2ILT5QTLxyqbnoUBxYRR4e6DuUJc0hQ0LtF3pi+Q==}
 
   '@preline/collapse@2.4.1':
     resolution: {integrity: sha512-iucsRRpIWQo3A6VZtiDIqHFHoIYvAyW7a7fcA6f4jgK+NmpMUC7sdOKUw2XJr229c+4257KSImaSTfQvcPwGRQ==}
@@ -3632,6 +3638,8 @@ snapshots:
   '@popperjs/core@2.11.8': {}
 
   '@preline/accordion@2.4.1': {}
+
+  '@preline/carousel@2.5.0': {}
 
   '@preline/collapse@2.4.1': {}
 
