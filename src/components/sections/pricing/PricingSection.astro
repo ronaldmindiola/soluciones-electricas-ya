@@ -7,7 +7,7 @@ import Icon from "@components/ui/icons/Icon.astro";
 const { pricing } = Astro.props;
 
 // Define TypeScript type for products.
-type Product = {
+/* type Product = {
   name: string;
   description: string;
   price: string;
@@ -16,9 +16,9 @@ type Product = {
   features: Array<string>;
   purchaseBtnTitle: string;
   purchaseLink: string;
-};
+}; */
 
-interface PricingSectionProps {
+/* interface PricingSectionProps {
   title: string;
   subTitle: string;
   badge: string;
@@ -30,7 +30,7 @@ interface PricingSectionProps {
     starterKit: Product;
     professionalToolbox: Product;
   };
-}
+} */
 ---
 
 <section
@@ -101,11 +101,13 @@ interface PricingSectionProps {
           <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
             {pricing.professionalToolbox.name}
           </h3>
-          <p class="text-orange-200">{pricing.professionalToolbox.description}</p>
+          <p class="text-orange-200">
+            {pricing.professionalToolbox.description}
+          </p>
         </div>
 
         <span
-          class="order-first inline-block rounded-full bg-orange-200 bg-opacity-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-center text-orange-600 lg:order-none"
+          class="order-first inline-block rounded-full bg-orange-200 bg-opacity-50 px-3 py-1 text-center text-xs font-bold uppercase tracking-wider text-orange-600 lg:order-none"
           >{pricing.badge}</span
         >
       </div>

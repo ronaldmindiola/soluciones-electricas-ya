@@ -1,5 +1,13 @@
 ---
-const { label = Astro.currentLocale === "fr" ? "Adresse e-mail" : "Email address", id, errorId } = Astro.props;
+const { 
+  label = Astro.currentLocale === "fr" ? "Adresse e-mail" : "Email address", 
+  id, 
+  errorId 
+} = Astro.props;
+
+const errorMessage = Astro.currentLocale === "fr" 
+  ? "Veuillez saisir une adresse e-mail valide" 
+  : "Please enter a valid email address";
 
 interface Props {
   label?: string;
@@ -8,28 +16,25 @@ interface Props {
 }
 ---
 
-<!-- Container for the label, input, and validation message -->
 <div>
-  <!-- Label for the email input field -->
   <label
     for={id}
     class="mb-2 block text-sm text-neutral-800 dark:text-neutral-200"
     >{label}</label
   >
-  <!-- Label for the email input field -->
   <div class="relative">
-    <!-- Email input field -->
     <input
       type="email"
       id={id}
       name="email"
       autocomplete="email"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
       class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:focus:ring-1"
       required
-      aria-describedby={id}
+      aria-describedby={errorId}
+      data-error-visible="false"
     />
-    <!-- Hidden error icon -->
-    <div class="pointer-events-none absolute inset-y-0 end-0 hidden pe-3">
+    <div class="pointer-events-none absolute inset-y-0 end-0 hidden pe-3" data-error-icon>
       <svg
         class="h-5 w-5 text-red-500"
         width="16"
@@ -44,8 +49,28 @@ interface Props {
       </svg>
     </div>
   </div>
-  <!-- Validation message which is hidden by default -->
   <p class="mt-2 hidden text-xs text-red-600" id={errorId}>
-    Please include a valid email address so we can get back to you
+    {errorMessage}
   </p>
 </div>
+
+<script>
+  document.querySelectorAll('input[type="email"]').forEach(input => {
+    input.addEventListener('input', function(e) {
+      const target = e.target as HTMLInputElement;
+      const errorIcon = target.parentElement?.querySelector('[data-error-icon]');
+      const errorMessage = document.getElementById(target.getAttribute('aria-describedby') || '');
+      
+      const isValid = target.validity.valid;
+      
+      if (errorIcon) {
+        errorIcon.classList.toggle('hidden', isValid);
+      }
+      if (errorMessage) {
+        errorMessage.classList.toggle('hidden', isValid);
+      }
+      
+      target.dataset.errorVisible = (!isValid).toString();
+    });
+  });
+</script>
