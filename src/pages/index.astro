@@ -14,10 +14,10 @@ import heroImage from "@images/ya/hero.jpg";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featureImage from "@images/features-image.avif";
-import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
+import featureImage from "@images/ya/features-image.jpg";
+import featuresNavsImg1 from "@images/ya/featuresNavs-image1.png";
+import featuresNavsImg2 from "@images/ya/featuresNavs-image2.png";
+import featuresNavsImg3 from "@images/ya/featuresNavs-image3.png";
 console.log(Astro.currentLocale);
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -72,7 +72,7 @@ const avatarSrcs: Array<string> = [
         content:
           "Impulsa tus proyectos con soluciones avanzadas de Soluciones Eléctricas YA y mejora la eficiencia en la gestión de instalaciones eléctricas.",
         svg: "tools",
-        src: tools,
+        src: featuresNavsImg1,
         alt: "Herramientas y equipos eléctricos en obra",
         first: true,
         // animation: "zoom-in-up",
@@ -82,7 +82,7 @@ const avatarSrcs: Array<string> = [
         content:
           "Gestiona tus proyectos con nuestras interfaces intuitivas, organizando y supervisando instalaciones eléctricas de forma ágil.",
         svg: "dashboard",
-        src: dashboard,
+        src: featuresNavsImg2,
         alt: "Plataforma de gestión intuitiva",
         second: true,
         // animation: "zoom-in-up",
@@ -92,7 +92,7 @@ const avatarSrcs: Array<string> = [
         content:
           "Maximiza la productividad con características diseñadas para optimizar cada etapa del proceso eléctrico, logrando resultados excepcionales.",
         svg: "house",
-        src: construction,
+        src: featuresNavsImg3,
         alt: "Estructura metálica en construcción",
         // animation: "zoom-in-up",
       },
