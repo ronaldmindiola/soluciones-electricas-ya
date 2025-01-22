@@ -5,7 +5,7 @@ import Btn404 from "@components/ui/buttons/Btn404.astro";
 import { SITE } from "@data/constants";
 
 // Define types for translations
-type TranslationKeys = "en" | "fr";
+type TranslationKeys = "en" | "fr" | "es";
 type Translations = {
   [key in TranslationKeys]: {
     pageTitle: string;
@@ -16,8 +16,15 @@ type Translations = {
 };
 
 // Define variables for page content
-const defaultLang: TranslationKeys = "en";
+const defaultLang: TranslationKeys = "es";
 const translations: Translations = {
+  es: {
+    pageTitle: `Página No Encontrada | ${SITE.title}`,
+    subTitle: "¡Oops! Parece que esta no es la página que estabas buscando.",
+    content:
+      "No te preocupes, estamos aquí para ayudarte a volver al camino correcto. Regresa y sigue construyendo con confianza.",
+    btnTitle: "Volver",
+  },
   en: {
     pageTitle: `Page Not Found | ${SITE.title}`,
     subTitle: "Oops, this isn't the tool you were looking for!",
@@ -36,7 +43,7 @@ const translations: Translations = {
 
 // Determine language from the URL
 const urlPath = Astro.url.pathname;
-const langCodeMatch = urlPath.match(/^\/(en|fr)\//);
+const langCodeMatch = urlPath.match(/^\/(es|en|fr)\//);
 const lang: TranslationKeys = langCodeMatch
   ? (langCodeMatch[1] as TranslationKeys)
   : defaultLang;

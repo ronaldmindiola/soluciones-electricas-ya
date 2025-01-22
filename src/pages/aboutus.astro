@@ -1,0 +1,114 @@
+---
+import VisionMision from "@/components/sections/misc/VisionMision.astro";
+import TitleSection from "@/components/ui/blocks/TitleSection.astro";
+import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import { ABOUT_US } from "@data/constants";
+const { vision, mission, values, story, team, cta } = ABOUT_US;
+---
+
+<MainLayout title={ABOUT_US.pageTitle}>
+  <!-- Title Section -->
+  <TitleSection
+    title={ABOUT_US.title}
+    subTitle={ABOUT_US.tagline}
+    align="center"
+  />
+
+  <VisionMision
+    title={ABOUT_US.title}
+    vision={vision}
+    mision={mission}
+  />
+
+  <!-- Valores -->
+  <section class="space-y-10 p-6 lg:px-8 my-16">
+    <h2
+      class="text-center text-3xl font-extrabold text-neutral-800 dark:text-neutral-200"
+    >
+      Nuestros Valores
+    </h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        values.map(({ name, description }, index) => (
+          <article class="group rounded-lg p-6 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md dark:bg-neutral-800">
+            <div class="mb-4 flex items-center space-x-4">
+              <div class="bg-blue-100 group-hover:bg-blue-200 rounded-full p-2 transition-colors duration-300">
+                i
+              </div>
+              <h3 class="text-2xl font-extrabold text-neutral-800 dark:text-neutral-100">
+                {name}
+              </h3>
+            </div>
+            <p class="text-neutral-600 dark:text-neutral-400">{description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- History -->
+  <section class="container mx-auto space-y-4 p-6 lg:px-8 my-16">
+    <h2
+       class="text-center text-3xl font-extrabold text-neutral-800 dark:text-neutral-200"
+     >
+       {story.title}
+     </h2>
+     <p class="mt-4 text-lg text-center text-neutral-600 dark:text-neutral-400">
+       {story.content}
+     </p>
+  </section>
+
+  <!-- Team -->
+  <section class="container mx-auto space-y-4 p-6 lg:px-8">
+    <h2
+       class="text-center text-3xl font-extrabold text-neutral-800 dark:text-neutral-200"
+     >
+       {team.title}
+     </h2>
+     <p class="mt-4 text-lg text-center text-neutral-600 dark:text-neutral-400">
+       {team.content}
+     </p>
+  </section>
+
+<!-- CTA -->
+  <section class="container mx-auto space-y-4 p-6 lg:px-8 text-center my-16 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md">
+    <p class="mt-4 text-lg text-center text-neutral-600 dark:text-neutral-400">
+      {cta.content}
+    </p>
+    <PrimaryCTA url="/contact" title={cta.btnTitle} />
+  </section>
+
+
+</MainLayout>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section > div {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  section > div:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  section > div:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  section > div:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  section > div:nth-child(4) {
+    animation-delay: 0.7s;
+  }
+</style>

@@ -36,13 +36,14 @@ const socialImageRes = await getImage({
 const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
 
 const languages: { [key: string]: string } = {
-  en: "",
+  es: "es",
+  en: "en",
   fr: "fr",
 };
 
 function createHref(lang: string, prefix: string, path: string): string {
   const hasPrefix = path.startsWith(`/${prefix}/`);
-  console.log(lang);
+  
 
   const basePath = hasPrefix ? path : `/${prefix}${path}`;
   const normalizedBasePath = basePath.replace(/\/\/+/g, "/");

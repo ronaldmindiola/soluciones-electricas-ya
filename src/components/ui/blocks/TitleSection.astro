@@ -1,0 +1,58 @@
+---
+
+// Define TypeScript interface for props
+interface Props {
+  title: string;
+  subTitle: string;
+  btnExists?: boolean;
+  btnTitle?: string;
+  btnURL?: string;
+  align?: string;
+}
+
+// Destructure the props passed to the Astro component
+const { title, subTitle } = Astro.props;
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <div class="text-center">
+    <h1
+      class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+    >
+      {title}
+    </h1>
+    <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+      {subTitle}
+    </p>
+  </div>
+ </section>
+ <style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section > div {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  section > div:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  section > div:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  section > div:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  section > div:nth-child(4) {
+    animation-delay: 0.7s;
+  }
+</style>
