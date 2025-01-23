@@ -1,13 +1,14 @@
 ---
-import VisionMision from "@/components/sections/misc/VisionMision.astro";
-import TitleSection from "@/components/ui/blocks/TitleSection.astro";
-import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
+import TitleSection from "@/components/ui/blocks/TitleSection.astro";
+import VisionMision from "@/components/sections/misc/VisionMision.astro";
+import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
 import { ABOUT_US } from "@data/constants";
 const { vision, mission, values, story, team, cta } = ABOUT_US;
+
 ---
 
-<MainLayout title={ABOUT_US.pageTitle}>
+<MainLayout title={ABOUT_US.pageTitle} lang="es">
   <!-- Title Section -->
   <TitleSection
     title={ABOUT_US.title}
