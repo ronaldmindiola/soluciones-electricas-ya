@@ -26,14 +26,14 @@ export default defineConfig({
   prefetch: true,
   integrations: [tailwind(), sitemap({
     i18n: {
-      defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
+      defaultLocale: "es", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
       locales: {
-        en: "en", // The `defaultLocale` value must present in `locales` keys
-        fr: "fr",
+        es: "es", // The `defaultLocale` value must present in `locales` keys
+        en: "en",
       },
     },
   }), starlight({
-    title: "ScrewFast Docs",
+    title: "Soluciones Electricas Ya Docs",
     defaultLocale: "root",
     // https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md
     // If no Astro and Starlight i18n configurations are provided, the built-in default locale is used in Starlight and a matching Astro i18n configuration is generated/used.
@@ -42,11 +42,12 @@ export default defineConfig({
     // If both an Astro and Starlight i18n configurations are provided, an error is thrown.
     locales: {
       root: {
-        label: "English",
-        lang: "en",
+        label: "Español",
+        lang: "es",
       },
       de: { label: "Deutsch", lang: "de" },
-      es: { label: "Español", lang: "es" },
+      en: { label: "English", lang: "en" },
+      
       fa: { label: "Persian", lang: "fa", dir: "rtl" },
       fr: { label: "Français", lang: "fr" },
       ja: { label: "日本語", lang: "ja" },
@@ -55,10 +56,10 @@ export default defineConfig({
     // https://starlight.astro.build/guides/sidebar/
     sidebar: [
       {
-        label: "Quick Start Guides",
+        label: "Guías de Inicio Rápido",
         translations: {
           de: "Schnellstartanleitungen",
-          es: "Guías de Inicio Rápido",
+          en: "Quick Start Guides",
           fa: "راهنمای شروع سریع",
           fr: "Guides de Démarrage Rapide",
           ja: "クイックスタートガイド",
