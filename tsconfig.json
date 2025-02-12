@@ -17,7 +17,12 @@
       "@scripts/*": ["src/assets/scripts/*"],
       "@styles/*": ["src/assets/styles/*"],
       "@utils/*": ["src/utils/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      },
+    ],
   },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]
