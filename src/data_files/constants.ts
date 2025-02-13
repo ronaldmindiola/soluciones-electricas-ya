@@ -40,9 +40,10 @@ export const OG = {
 };
 
 export const ABOUT_US = {
-  pageTitle: "Nosotros | Soluciones Eléctricas Ya",
-  title: "Quienes Somos?",
-  tagline: "Energizamos tus proyectos con soluciones confiables y de calidad.",
+  pageTitle: "Nosotros",
+  sectionTitle: "Quienes Somos?",
+  tagline: "En Soluciones Eléctricas YA SAS, energizamos tus proyectos con soluciones confiables y de calidad, respaldadas por experiencia y compromiso.",
+
   mission: "En Soluciones Eléctricas YA SAS, nos dedicamos a ofrecer herramientas eléctricas de alta calidad, junto con servicios especializados en iluminación, montajes y adecuaciones eléctricas. Nuestra misión es proporcionar soluciones seguras, eficientes y duraderas, permitiendo que nuestros clientes lleven a cabo sus proyectos eléctricos con total confianza. Trabajamos con pasión y compromiso para ser aliados estratégicos en cada desafío eléctrico, garantizando excelencia en cada detalle.",
   vision: "Ser reconocidos como líderes en soluciones eléctricas y de iluminación, destacándonos por la calidad de nuestros productos y servicios, nuestra atención personalizada y nuestro compromiso con la innovación y sostenibilidad. Aspiramos a transformar el sector, expandiendo nuestra presencia en nuevos mercados y brindando soluciones vanguardistas que contribuyan al desarrollo eficiente y responsable de cada proyecto.",
   values: [
