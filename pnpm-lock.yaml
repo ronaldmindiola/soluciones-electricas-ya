@@ -50,11 +50,14 @@ importers:
       astro-compressor:
         specifier: ^1.0.0
         version: 1.0.0
+      astro-masonry:
+        specifier: ^1.1.0
+        version: 1.2.0
       clipboard:
         specifier: ^2.0.11
         version: 2.0.11
       globby:
-        specifier: ^14.0.2
+        specifier: ^14.1.0
         version: 14.1.0
       gsap:
         specifier: ^3.12.5
@@ -872,6 +875,9 @@ packages:
     resolution: {integrity: sha512-dQ47XhgtxuRTiKQrZOJKdebMuxvvTBR89U439EHzLP6KR45IILFlGDihGQp3//1aUjj4nwpbINSzms1heJ7vmQ==}
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0
+
+  astro-masonry@1.2.0:
+    resolution: {integrity: sha512-nNZWOGF/8bhVJpq9cfBIl53f5DBKZt86uIrUYvU6PTrCLAsGRTf464yFySvwIy+8DVnpHb1MEF9zfIqqC9OL8A==}
 
   astro-vtbot@2.0.5:
     resolution: {integrity: sha512-twkpuPz7L+WFBwnThFjYXVh8U/EqCU5d+zEFl+TyO5+eagR88fCTsdYv0lwGiuz3lqKD2drSuA5K0ziUucTt4g==}
@@ -3486,6 +3492,8 @@ snapshots:
     dependencies:
       astro: 5.2.5(jiti@1.21.7)(rollup@4.34.6)(terser@5.38.1)(typescript@5.7.3)(yaml@2.7.0)
       rehype-expressive-code: 0.40.1
+
+  astro-masonry@1.2.0: {}
 
   astro-vtbot@2.0.5:
     dependencies:
