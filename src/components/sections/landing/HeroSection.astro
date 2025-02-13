@@ -6,7 +6,6 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
 import logoDark from "@images/ya/logoDark.png";
-import heroImage from "@images/ya/heroImage.jpg";
 
 // Define props from Astro
 const {
@@ -82,7 +81,7 @@ interface Props {
 
   <div class="flex w-full">
     <Image
-        src={heroImage}
+        src={src}
         alt={alt || "Imagen principal"}
         class="h-full w-full rounded-lg object-cover object-center transition duration-500 ease-in-out hover:scale-110 hover:cursor-zoom-out hover:shadow-lg dark:hover:shadow-neutral-800/50"
         draggable="false"
