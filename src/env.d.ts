@@ -3,3 +3,4 @@
 
 // Custom types declarations
 declare module 'astro/loaders';
+declare module 'astro-masonry';

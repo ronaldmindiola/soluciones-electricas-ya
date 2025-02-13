@@ -1,0 +1,53 @@
+---
+import TitleSection from "@/components/ui/blocks/TitleSection.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import { Masonry } from "astro-masonry";  
+import { showcaseImages } from "@utils/utils"; // Importamos la función para obtener las imágenes
+
+import { SITE } from "@data/constants";
+import { Image } from "astro:assets";
+
+const pageTitle: string = `Showcase | ${SITE.title}`;
+
+// Obtener imágenes dinámicamente
+---
+
+<MainLayout 
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "LandingPage",
+    "@id": "https://solucioneselectricasya.com/contact",
+    url: "https://solucioneselectricasya.com/contact",
+    name: "Contáctanos | Soluciones Eléctricas YA",
+    description:
+      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://solucioneselectricasya.com",
+      name: "Soluciones Eléctricas YA",
+      description:
+        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+    },
+  }}
+>
+  <!-- Title Section -->
+  <TitleSection title="Showcase" subTitle="Nuestro trabajo" />
+
+
+
+  <Masonry
+    breakpointCols={{
+      default: 4,
+      1280: 3,
+      900: 2,
+      600: 1,
+    }}
+    class="flex gap-4 px-4 pt-4"
+    columnClass="space-y-4"
+  >
+  {showcaseImages.map(({ src, alt }) => (
+  <Image width="600" height="800" src={src} alt={alt} class="rounded-lg shadow-md max-w-full h-auto" />
+))}
+  </Masonry>
+</MainLayout>

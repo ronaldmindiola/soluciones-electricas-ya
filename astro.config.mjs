@@ -118,4 +118,10 @@ export default defineConfig({
   experimental: {
     clientPrerender: true,
   },
+  redirects: {
+    "/en/showcase": "/showcase",
+    "/contact": "/contacto",
+    "/en/contact": "/contacto",
+    "/en/contacto": "/contacto",
+  }
 });
