@@ -50,27 +50,27 @@ export const ABOUT_US = {
     {
       name: "Compromiso",
       description: "Estamos dedicados a ofrecer soluciones que cumplan y superen las expectativas de nuestros clientes.",
-      icon: "../icons/handshake.svg",
+      icon: "handshake",
     },
     {
       name: "Calidad",
       description: "Seleccionamos cuidadosamente nuestras herramientas y servicios para garantizar resultados excepcionales.",
-      icon: "../icons/handshake.svg",
+      icon: "medal",
     },
     {
       name: "Innovación",
       description: "Adoptamos las últimas tecnologías y tendencias para ofrecer soluciones modernas y efectivas.",
-      icon: "../icons/handshake.svg",
+      icon: "lightbulb",
     },
     {
       name: "Sostenibilidad",
       description: "Promovemos prácticas responsables con el medio ambiente en cada aspecto de nuestro negocio.",
-      icon: "../icons/handshake.svg",
+      icon: "leaf",
     },
     {
       name: "Confianza",
       description: "Construimos relaciones sólidas con nuestros clientes basándonos en la transparencia y el respeto mutuo.",
-      icon: "../icons/handshake.svg",
+      icon: "shield-heart",
     },
   ],
   story: {

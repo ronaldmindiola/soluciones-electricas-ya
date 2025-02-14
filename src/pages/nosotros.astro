@@ -14,7 +14,6 @@ import Icon from "@components/ui/icons/Icon.astro";
 import TitleSection from "@/components/ui/blocks/TitleSection.astro";
 import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
-import handshake from "../assets/icons/handshake.svg";
 
 // Define the variables that will be used in this component
 
@@ -87,7 +86,7 @@ const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
     <h2
       class="text-center text-3xl font-extrabold text-neutral-800 dark:text-neutral-200"
     >
-      Nuestros Valores
+    <i class="fa-solid fa-scale-balanced text-orange-400"></i> Nuestros Valores
     </h2>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
@@ -95,7 +94,7 @@ const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
           <article class="group rounded-lg p-6 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md dark:bg-neutral-800">
             <div class="mb-4 flex items-center space-x-4">
               <div class="group-hover:bg-blue-200 rounded-full p-2 transition-colors duration-300 ">
-                <Image src={handshake} alt={name} class="h-6 w-6 " />
+                <i class={`fa-solid fa-${icon} h-5  text-orange-400`}></i>
               </div>
               <h3 class="text-2xl font-extrabold text-neutral-800 dark:text-neutral-100">
                 {name}
@@ -113,7 +112,7 @@ const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
     <h2
       class="text-center text-3xl font-extrabold text-neutral-800 dark:text-neutral-200"
     >
-      {story.title}
+    <i class="fa-solid fa-scroll text-orange-400"></i> Historia
     </h2>
     <p class="mt-4 text-center text-lg text-neutral-600 dark:text-neutral-400">
       {story.content}
@@ -125,7 +124,7 @@ const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
     <h2
       class="text-center text-3xl font-extrabold text-neutral-800 dark:text-neutral-200"
     >
-      {team.title}
+    <i class="fa-solid fa-people-group"></i> {team.title}
     </h2>
     <p class="mt-4 text-center text-lg text-neutral-600 dark:text-neutral-400">
       {team.content}
