@@ -88,8 +88,8 @@ importers:
         specifier: ^0.5.10
         version: 0.5.10(tailwindcss@3.4.17)
       astro-vtbot:
-        specifier: ^2.0.3
-        version: 2.0.5
+        specifier: ^2.0.6
+        version: 2.0.6
       prettier:
         specifier: ^3.4.2
         version: 3.5.1
@@ -879,8 +879,8 @@ packages:
   astro-masonry@1.2.0:
     resolution: {integrity: sha512-nNZWOGF/8bhVJpq9cfBIl53f5DBKZt86uIrUYvU6PTrCLAsGRTf464yFySvwIy+8DVnpHb1MEF9zfIqqC9OL8A==}
 
-  astro-vtbot@2.0.5:
-    resolution: {integrity: sha512-twkpuPz7L+WFBwnThFjYXVh8U/EqCU5d+zEFl+TyO5+eagR88fCTsdYv0lwGiuz3lqKD2drSuA5K0ziUucTt4g==}
+  astro-vtbot@2.0.6:
+    resolution: {integrity: sha512-5S9PChJDVgvZXK+MdoXH+Q9dN5htznvzR1CoPbMrFydEOtGrGwP7amYEXHjvNPVT1HodtYGzzSp3In76esJkjA==}
 
   astro@5.3.0:
     resolution: {integrity: sha512-e88l/Yk/6enR/ZDddLbqtM+oblBFk5mneNSmNesyVYGL/6Dj4UA67GPAZOk79VxT5dbLlclZSyyw/wlxN1aj3A==}
@@ -3495,7 +3495,7 @@ snapshots:
 
   astro-masonry@1.2.0: {}
 
-  astro-vtbot@2.0.5:
+  astro-vtbot@2.0.6:
     dependencies:
       '@vtbag/cam-shaft': 1.0.5
       '@vtbag/element-crossing': 1.1.0
