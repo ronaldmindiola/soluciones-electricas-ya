@@ -9,7 +9,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://screwfast.uk",
+  site: "https://solucioneselectricasya.com",
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -26,14 +26,14 @@ export default defineConfig({
   prefetch: true,
   integrations: [tailwind(), sitemap({
     i18n: {
-      defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
+      defaultLocale: "es", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
       locales: {
-        en: "en", // The `defaultLocale` value must present in `locales` keys
-        fr: "fr",
+        es: "es", // The `defaultLocale` value must present in `locales` keys
+        en: "en",
       },
     },
   }), starlight({
-    title: "ScrewFast Docs",
+    title: "Soluciones Electricas Ya Docs",
     defaultLocale: "root",
     // https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md
     // If no Astro and Starlight i18n configurations are provided, the built-in default locale is used in Starlight and a matching Astro i18n configuration is generated/used.
@@ -42,10 +42,11 @@ export default defineConfig({
     // If both an Astro and Starlight i18n configurations are provided, an error is thrown.
     locales: {
       root: {
-        label: "English",
-        lang: "en",
+        label: "Español",
+        lang: "es",
       },
       de: { label: "Deutsch", lang: "de" },
+      en: { label: "English", lang: "en" },
       es: { label: "Español", lang: "es" },
       fa: { label: "Persian", lang: "fa", dir: "rtl" },
       fr: { label: "Français", lang: "fr" },
@@ -99,14 +100,14 @@ export default defineConfig({
         tag: "meta",
         attrs: {
           property: "og:image",
-          content: "https://screwfast.uk" + "/social.webp",
+          content: "https://solucioneselectricasya.com" + "/social.webp",
         },
       },
       {
         tag: "meta",
         attrs: {
           property: "twitter:image",
-          content: "https://screwfast.uk" + "/social.webp",
+          content: "https://solucioneselectricasya.com" + "/social.webp",
         },
       },
     ],
