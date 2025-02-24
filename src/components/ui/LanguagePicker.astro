@@ -1,5 +1,5 @@
 ---
-import { languages } from "@utils//ui";
+import { languages } from "@utils/ui";
 import Icon from "./icons/Icon.astro";
 ---
 
@@ -20,8 +20,10 @@ import Icon from "./icons/Icon.astro";
       stroke="currentColor"
       stroke-width="2"
       stroke-linecap="round"
-      stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
+      stroke-linejoin="round"
     >
+      <path d="m6 9 6 6 6-6"></path>
+    </svg>
   </button>
 
   <div
@@ -33,7 +35,8 @@ import Icon from "./icons/Icon.astro";
       Object.entries(languages).map(([lang, label]) => (
         <a
           class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-          href={`/${lang === "en" ? "" : lang}`}
+          href={lang === "es" ? "/" : `/en${Astro.url.pathname.replace(/^\/es/, "")}`}
+          data-lang={lang}
         >
           {label}
         </a>
@@ -42,50 +45,37 @@ import Icon from "./icons/Icon.astro";
   </div>
 </div>
 
-<!--Import the necessary Dropdown plugin-->
-<!--https://preline.co/plugins/html/dropdown.html-->
+<!-- Importar el plugin de Dropdown -->
 <script>
   import "@preline/dropdown/index.js";
 </script>
 
 <script>
-  // Type alias for supported languages
-  type TLanguage = "en" | "fr";
-  // array of supported languages
-  const languages: TLanguage[] = ["en", "fr"];
-
   document.addEventListener("DOMContentLoaded", function () {
-    // Only target language picker links
-    const languageLinks = document.querySelectorAll(".hs-dropdown-menu[aria-labelledby='hs-dropdown-hover-event'] a");
-    
-    languageLinks.forEach((element) => {
-      const link = element as HTMLAnchorElement;
-      const lang = link
-        .getAttribute("href")
-        ?.replace("/", "")
-        .replace("/", "") as TLanguage;
+    const languageLinks = document.querySelectorAll(".hs-dropdown-menu a");
 
+    languageLinks.forEach((link) => {
       link.addEventListener("click", function (event) {
         event.preventDefault();
-
-        const url = new URL(window.location.href);
         
-        const currentPath = url.pathname
-          .split("/")
-          .filter((part) => part && !languages.includes(part as TLanguage))
-          .join("/");
+        const lang = link.getAttribute("data-lang");
+        const url = new URL(window.location.href);
 
-        let newPath = "";
-        if (lang && lang !== "en") {
-          newPath = `/${lang}/${currentPath}`;
+        // Extraer la ruta actual sin el idioma
+        const pathParts = url.pathname.split("/").filter((part) => part !== "" && part !== "en");
+
+        // Evitar que se seleccione el mismo idioma
+        const currentLang = url.pathname.startsWith("/en") ? "en" : "es";
+        if (lang === currentLang) return;
+
+        // Modificar la URL según el idioma seleccionado
+        if (lang === "es") {
+          url.pathname = `/${pathParts.join("/")}`;
         } else {
-          newPath = `/${currentPath}`;
+          url.pathname = `/en/${pathParts.join("/")}`;
         }
 
-        newPath = newPath.replace(/\/+/g, "/");
-        if (newPath === "") newPath = "/";
-        
-        window.location.href = `${url.origin}${newPath}${url.search}`;
+        window.location.href = url.toString();
       });
     });
   });

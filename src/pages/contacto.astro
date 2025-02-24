@@ -1,0 +1,156 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+// Import the necessary dependencies.
+import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
+import ContactIconBlock from "@components/ui/blocks/ContactIconBlock.astro";
+import TextInput from "@components/ui/forms/input/TextInput.astro";
+import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
+import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
+import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
+import Icon from "@components/ui/icons/Icon.astro";
+
+const pageTitle: string = `Contacto | ${SITE.title}`;
+// Define the variables that will be used in this component
+const title: string = "Contáctanos";
+const subTitle: string =
+  "¿Tienes preguntas o quieres discutir un proyecto?";
+const formTitle: string = "Por favor llena el formulario";
+const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
+---
+
+<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://solucioneselectricasya.com/contact",
+    "url": "https://solucioneselectricasya.com/contact",
+    "name": "Contáctanos | Soluciones Eléctricas YA",
+    "description":
+      "¿Tienes preguntas o quieres discutir un proyecto? ¡Lámanos, y let's craft the perfect solution with our tools and services.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://solucioneselectricasya.com",
+      "name": "Soluciones Eléctricas YA",
+      "description":
+        "Soluciones Eléctricas YA ofrece productos de alta calidad y servicios de electricidad y iluminación expertos para atender todas sus necesidades.",
+    },
+    "inLanguage": "es-ES"
+  }}
+>
+  <!-- Contact Us -->
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <div class="text-center">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        {title}
+      </h1>
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+        {subTitle}
+      </p>
+    </div>
+
+    <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
+      <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
+        <h2
+          class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300"
+        >
+          {formTitle}
+        </h2>
+        <!-- Form for user input with various input fields.-->
+        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
+        <form>
+          <fieldset disabled>
+            <div class="grid gap-4">
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <TextInput
+                  id="hs-firstname-contacts"
+                  label="Nombre"
+                  name="hs-firstname-contacts"
+                />
+                <TextInput
+                  id="hs-lastname-contacts"
+                  label={Astro.currentLocale === "en"
+                    ? "Last Name"
+                    : "Apellido"}
+                  name="hs-lastname-contacts"
+                />
+              </div>
+              <EmailContactInput id="hs-email-contacts" 
+                label={Astro.currentLocale === "en"
+                    ? "Email"
+                    : "Correo Electrónico"}
+              />
+              <PhoneInput id="hs-phone-number" label={Astro.currentLocale === "en"
+                    ? "Phone Number"
+                    : "Número de Teléfono"} />
+              <TextAreaInput
+                id="hs-about-contacts"
+                label={Astro.currentLocale === "en"
+                    ? "Details"
+                    : "Detalles"}
+                name="hs-about-contacts"
+              />
+            </div>
+            
+            <div class="mt-4 grid">
+              <AuthBtn title="Enviar" />
+            </div>
+            
+            <div class="mt-3 text-center">
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                {formSubTitle}
+              </p>
+            </div>
+          </fieldset>
+        </form>
+        
+      </div>
+
+      <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
+      <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
+        <ContactIconBlock
+          heading="Nuestros Servicios"
+          content="Descubre nuestras soluciones en fabricación de mobiliario y servicios eléctricos."
+          isLinkVisible={true}
+          linkTitle="Ver más sobre nuestros servicios"
+          linkURL="#"
+          isArrowVisible={true}
+          ><Icon name="question" />
+        </ContactIconBlock>
+
+        <ContactIconBlock
+          heading="Preguntas Frecuentes"
+    content="Resuelve tus dudas sobre nuestros productos y servicios."
+          isLinkVisible={true}
+          linkTitle="Consultar preguntas frecuentes"
+          linkURL="#"
+          isArrowVisible={true}
+          ><Icon name="chatBubble" />
+        </ContactIconBlock>
+
+        <ContactIconBlock
+          heading="Visita nuestra oficina"
+          content="Soluciones Eléctricas YA SAS"
+          isAddressVisible={true}
+          addressContent="Cra 15 # 72-45, Bogotá, Colombia"
+          ><Icon name="mapPin" />
+        </ContactIconBlock>
+
+        <ContactIconBlock
+          heading="Contáctanos por email"
+          content="Para consultas y cotizaciones, escríbenos a"
+          isLinkVisible={true}
+          linkTitle="contacto@solucioneselectricasya.com"
+          linkURL="#"
+          ><Icon name="envelopeOpen" />
+        </ContactIconBlock>
+      </div>
+    </div>
+  </div>
+</MainLayout>

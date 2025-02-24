@@ -10,15 +10,19 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.avif";
+
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featureImage from "@images/features-image.avif";
-import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
 import { partnersData } from "@/data_files/constants";
+
+// Import Images
+import heroImage from "@images/hero-image.avif";
+import featureImage from "@images/features-image.avif";
+
+import featuresNavsImage1 from "@images/featuresNavs-image-1.avif";
+import featuresNavsImage2 from "@images/featuresNavs-image-2.avif";
+import featuresNavsImage3 from "@images/featuresNavs-image-3.avif";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -29,119 +33,113 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout>
-  <AnnouncementBanner
-    btnId="dismiss-button"
-    btnTitle="Explore ScrewFast on GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
-  />
-
+  
   <HeroSection
-    title=`Equip Your Projects with <span
-        class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
-    primaryBtn="Start Exploring"
-    primaryBtnURL="/products"
-    secondaryBtn="Contact Sales Team"
-    secondaryBtnURL="/contact"
+    title=`<span class="block">Soluciones</span>
+            <span class="block">Eléctricas</span>`
+    subtitle="Innovaciones eléctricas y de iluminación al alcance de tu mano. Más de 20 años encendiendo tus ideas."
+    primaryBtn="Descubre Nuestras Soluciones"
+    primaryBtnURL="/showcase"
+    secondaryBtn="Contactar Equipo"
+    secondaryBtnURL="/contacto"
     withReview={true}
     avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
+    rating=`<span class="font-bold animate-zoomIn">4.5</span> / 5`
     starCount={4}
-    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
-    src={heroImage}
+    reviews=`<span class="font-bold animate-zoomIn [animation-delay:0.3s]">Más de 100</span> opiniones`
     alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    src={heroImage}
   />
 
   <ClientsSection
-    title="Trusted by Industry Leaders"
-    subTitle="Experience the reliability chosen by industry giants."
-    partners={partnersData}
+    title="Recomendado por Líderes del Sector"
+    subTitle="Más de 20 años ofreciendo soluciones eléctricas confiables y de calidad."
   />
 
   <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
-    src={featureImage}
-    alt="ScrewFast products in floating boxes"
+    title="Satisfaciendo las Demandas del Sector Eléctrico"
+    subTitle="En Soluciones Eléctricas YA SAS, ofrecemos soluciones innovadoras en iluminación, mobiliario y servicios eléctricos. Nos especializamos en superar los desafíos únicos de cada proyecto, garantizando calidad, eficiencia y tiempos de entrega confiables para ayudarte a alcanzar tus metas."
     features={features}
   />
 
   <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
+    title={`<span class="block text-yellow-500 dark:text-yellow-400" data-aos="fadeInUp">Soluciones Eléctricas YA</span> adapta sus servicios a tus necesidades de iluminación.`}
     tabs={[
       {
-        heading: "Cutting-Edge Tools",
+        heading: "Herramientas de Vanguardia",
         content:
-          "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
+          "Impulsa tus proyectos con Soluciones Eléctricas YA y mejora la eficiencia en la gestión de instalaciones eléctricas.",
         svg: "tools",
-        src: tools,
-        alt: "Yellow and black heavy equipment on brown grass field",
+        src: featuresNavsImage1,
+        alt: "Herramientas y equipos eléctricos en obra",
         first: true,
+        // animation: "zoom-in-up",
       },
       {
-        heading: "Intuitive Dashboards",
+        heading: "Interfaces Intuitivas",
         content:
-          "Navigate with ease using ScrewFast's intuitive dashboards. Set up and oversee your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
+          "Gestiona tus proyectos con nuestras interfaces intuitivas, organizando y supervisando instalaciones eléctricas de forma ágil.",
         svg: "dashboard",
-        src: dashboard,
-        alt: "A screenshot or graphic representation of the intuitive dashboard",
-        second: true,
+        src: featuresNavsImage2,
+        alt: "Plataforma de gestión intuitiva",
+        
+        // animation: "zoom-in-up",
       },
       {
-        heading: "Robust Features",
+        heading: "Características Robustas",
         content:
-          "Minimize complexity, maximize productivity. ScrewFast's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
+          "Maximiza la productividad con características diseñadas para optimizar cada etapa del proceso eléctrico, logrando resultados excepcionales.",
         svg: "house",
-        src: construction,
-        alt: "Gray metal building frame near tower crane during daytime",
+        src: featuresNavsImage3,
+        alt: "Estructura metálica en construcción",
+        // animation: "zoom-in-up",
       },
     ]}
   />
 
   <TestimonialsSection
-    title="Fast-Track Your Projects"
-    subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
-    ;
+    title="Impulsa tus Proyectos"
+    subTitle="En Soluciones Eléctricas YA SAS, conectamos eficiencia y calidad para ofrecerte soluciones inmediatas y personalizadas. Experimenta la rapidez y precisión en cada proyecto de iluminación y mobiliario."
     testimonials={[
       {
         content:
-          "ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!",
-        author: "Samantha Ruiz",
-        role: "Chief Operating Officer | ConstructIt Inc.",
+          "Soluciones Eléctricas YA SAS ha transformado la eficiencia de nuestros proyectos. Su implementación fue rápida y sus tiempos de respuesta, son incomparables. ¡Un verdadero cambio en el sector eléctrico!",
+        author: "Daniela Rosas",
+        role: "Directora de Operaciones | IlumTec Inc.",
         avatarSrc:
           "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
       },
     ]}
     statistics={[
       {
-        count: "70k+",
-        description:
-          "customers equipped — from DIY to major construction firms",
+        count: "20+ años",
+        description: "de experiencia en soluciones eléctricas y de iluminación",
       },
       {
         count: "35%",
         description:
-          "uptick in project efficiency with ScrewFast tools and services",
+          "de aumento en la eficiencia de proyectos con nuestras soluciones eléctricas",
       },
       {
         count: "15.3%",
         description:
-          "reduction in maintenance costs reported by long-term clients",
+          "reducción en costos de mantenimiento reportada por nuestros clientes de largo plazo",
       },
       {
         count: "2x",
-        description: "quicker assembly using innovative fastening solutions",
+        description:
+          "mayor rapidez en la implementación de soluciones innovadoras",
       },
     ]}
   />
 
   <PricingSection pricing={pricing} />
 
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  <FAQ title="Preguntas<br />Frecuentes" faqs={faqs} />
 
   <HeroSectionAlt
-    title="Let's Build Together"
-    subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
-    url="https://github.com/mearashadowfax/ScrewFast"
+    title="Iluminamos tus Proyectos"
+    subTitle="En Soluciones Eléctricas YA SAS, ofrecemos soluciones integrales en iluminación y proyectos eléctricos, combinando innovación, eficiencia y calidad para transformar tus espacios. Especializados en la implementación de sistemas de iluminación y mobiliario, brindamos soluciones rápidas y personalizadas para proyectos de instalación, remodelación y mantenimiento, asegurando entornos seguros, eficientes y bien iluminados en cada etapa."
+    url="/contacto"
   />
 </MainLayout>

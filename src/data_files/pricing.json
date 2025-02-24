@@ -1,38 +1,46 @@
 {
-  "title": "Simple, Transparent Pricing",
-  "subTitle": "Boost efficiency with ScrewFast's clear, value-driven plans.",
-  "badge": "Best value",
-  "thirdOption": "Enterprise Solutions?",
-  "btnText": "Get a Custom Quote",
+  "title": "Planes Flexibles y Adaptados a Tus Necesidades",
+  "subTitle": "Descubre las soluciones personalizadas que Soluciones Eléctricas YA SAS ofrece para proyectos eléctricos de cualquier escala.",
+  "badge": "Mejor valor",
+  "thirdOption": "¿Soluciones Empresariales?",
+  "btnText": "Solicita una Cotización Personalizada",
 
   "starterKit": {
-    "name": "Starter Kit",
-    "description": "Best option for DIY projects",
-    "price": "49",
-    "cents": ".00",
-    "billingFrequency": "USD / monthly",
+    "name": "Kit Básico",
+    "description": "Solución ideal para proyectos eléctricos de pequeña escala",
     "features": [
-      "Key hardware tools",
-      "Access to guides & tutorials",
-      "Standard support"
+      "Herramientas eléctricas esenciales",
+      "Acceso a recursos educativos y materiales técnicos",
+      "Soporte estándar para resolver dudas comunes"
     ],
-    "purchaseBtnTitle": "Get the Starter Kit",
+    "purchaseBtnTitle": "Solicitar el Kit Básico",
     "purchaseLink": "#"
   },
 
   "professionalToolbox": {
-    "name": "Professional Toolbox",
-    "description": "Best for large scale uses",
-    "price": "89",
-    "cents": ".00",
-    "billingFrequency": "USD / monthly",
+    "name": "Kit Profesional",
+    "description": "Pensado para proyectos eléctricos de mediana o gran escala",
     "features": [
-      "Premium tool selection",
-      "Priority support",
-      "Exclusive content & deals",
-      "Bulk order discounts"
+      "Selección premium de herramientas eléctricas",
+      "Soporte prioritario con tiempos de respuesta rápidos",
+      "Contenido y ofertas exclusivas para profesionales",
+      "Descuentos para compras al por mayor"
     ],
-    "purchaseBtnTitle": "Get the Professional Toolbox",
+    "purchaseBtnTitle": "Solicitar el Kit Profesional",
+    "purchaseLink": "#"
+  },
+
+  "enterpriseSolution": {
+    "name": "Soluciones Empresariales",
+    "description": "Diseñado para proyectos eléctricos a gran escala que requieren soluciones completas y personalizadas",
+    "features": [
+      "Consultoría especializada para proyectos empresariales",
+      "Herramientas eléctricas de alta capacidad",
+      "Soluciones integrales de instalación y mantenimiento",
+      "Soporte técnico avanzado con asistencia en sitio",
+      "Opciones de financiamiento flexible"
+    ],
+    "purchaseBtnTitle": "Solicitar una Cotización Empresarial",
     "purchaseLink": "#"
   }
 }

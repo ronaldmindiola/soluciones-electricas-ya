@@ -44,6 +44,9 @@ importers:
       astro:
         specifier: ^5.3.0
         version: 5.3.0(jiti@1.21.7)(rollup@4.34.8)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      astro-carousel:
+        specifier: ^3.0.2
+        version: 3.0.2(astro@5.3.0(jiti@1.21.7)(rollup@4.34.8)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))
       astro-compressor:
         specifier: ^1.0.0
         version: 1.0.0
@@ -858,6 +861,11 @@ packages:
   astring@1.9.0:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
+
+  astro-carousel@3.0.2:
+    resolution: {integrity: sha512-GbrAjbzEwtRSdxN1hGqylVcmdYxXVgPteGKsMNwJUTM/Pad8TguzObpW0cbBMF0hG8koSnPjKo0NelTsLVHg7Q==}
+    peerDependencies:
+      astro: ^5.1.7
 
   astro-compressor@1.0.0:
     resolution: {integrity: sha512-MNGRmjIsb73BIJivbU/HnTbPu5CEFvXp1NCev0bpsuK/cp4cCPX6C1omUPXzw2oQbtKv0phTTTtEk+h20SrF1Q==}
@@ -3471,6 +3479,10 @@ snapshots:
   array-iterate@2.0.1: {}
 
   astring@1.9.0: {}
+
+  astro-carousel@3.0.2(astro@5.3.0(jiti@1.21.7)(rollup@4.34.8)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)):
+    dependencies:
+      astro: 5.3.0(jiti@1.21.7)(rollup@4.34.8)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
 
   astro-compressor@1.0.0: {}
 

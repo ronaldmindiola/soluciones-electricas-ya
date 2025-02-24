@@ -2,20 +2,27 @@
 // Import the necessary dependencies
 import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
 import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro";
-import enStrings from "@utils/navigation.ts";
-import frStrings from "@utils/fr/navigation.ts";
-import Icon from "@components/ui/icons/Icon.astro";
+import esStrings from "@/utils/navigation";
+import enStrings from "@/utils/en/navigation";
 import BrandLogo from "@components/BrandLogo.astro";
 import { SITE } from "@data/constants";
 
 // Select the correct translation based on the page's lang prop:
-const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
+const strings = Astro.currentLocale === "en" ? enStrings : esStrings;
 
-// Define the variables that will be used in this component
-const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Rester à jour" : "Stay up to date";
-const sectionThreeContent: string = Astro.currentLocale === "fr" ? "Restez informé des derniers outils et des offres exclusives." :
-  "Stay updated with the latest tools and exclusive deals.";
-const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafted by";
+// Definir las variables que se utilizarán en este componente
+const sectionThreeTitle: string = Astro.currentLocale === "en" 
+  ? "Stay informed" 
+  : "Mantente informado";
+
+const sectionThreeContent: string = Astro.currentLocale === "en" 
+  ? "Get the latest updates on cutting-edge electrical solutions and exclusive offers." 
+  : "Mantente al día con las últimas soluciones eléctricas y ofertas exclusivas.";
+
+const crafted: string = Astro.currentLocale === "en" 
+  ? "Crafted by" 
+  : "por";
+
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">
@@ -77,34 +84,35 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
           © <span id="current-year"></span> {SITE.title}. {crafted}
           <a
             class="rounded-lg font-medium underline underline-offset-2 outline-none ring-zinc-500 transition duration-300 hover:text-neutral-700 hover:decoration-dashed focus:outline-none focus-visible:ring dark:ring-zinc-200 dark:hover:text-neutral-300"
-            href="https://www.gulamoff.dev/"
+            href="https://www.oceanodigital.vercel.app/"
             target="_blank"
-            rel="noopener noreferrer">gulamoff</a
+            rel="noopener noreferrer">OceanoDigital</a
           >.
         </p>
       </div>
 
       <!-- Social Brands -->
       <div>
-        <FooterSocialLink url={strings.socialLinks.facebook}
-          ><Icon name="facebookFooter" />
+        <FooterSocialLink url={strings.socialLinks.instagram}>
+          <i class="fa-brands fa-instagram h-6 w-6"></i>
         </FooterSocialLink>
 
-        <FooterSocialLink url={strings.socialLinks.x}
-          ><Icon name="xFooter" /></FooterSocialLink
-        >
-
-        <FooterSocialLink url={strings.socialLinks.github}
-          ><Icon name="githubFooter" />
+        <FooterSocialLink url={strings.socialLinks.twitter}>
+          <i class="fa-brands fa-twitter h-6 w-6"></i>
         </FooterSocialLink>
 
-        <FooterSocialLink url={strings.socialLinks.google}
-          ><Icon name="googleFooter" />
+        <FooterSocialLink url={strings.socialLinks.facebook}>
+          <i class="fa-brands fa-facebook h-6 w-6"></i>
         </FooterSocialLink>
 
-        <FooterSocialLink url={strings.socialLinks.slack}
-          ><Icon name="slackFooter" />
+        <FooterSocialLink url={strings.socialLinks.facebook}>
+          <i class="fa-brands fa-youtube h-6 w-6"></i>
         </FooterSocialLink>
+
+        <FooterSocialLink url={strings.socialLinks.linkedin}>
+          <i class="fa-brands fa-linkedin h-6 w-6"></i>
+        </FooterSocialLink>
+
       </div>
     </div>
 

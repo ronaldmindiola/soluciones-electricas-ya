@@ -5,7 +5,7 @@ import GithubBtn from "@components/ui/buttons/GithubBtn.astro";
 // Define props from Astro
 const { title, subTitle, url } = Astro.props;
 
-const btnTitle = Astro.currentLocale === "fr" ? "Continuer avec Github" : "Continue with Github";
+const btnTitle = Astro.currentLocale === "en" ? "Contact us" : "Contáctanos";
 
 // Define TypeScript interface for props
 interface Props {
@@ -22,99 +22,36 @@ interface Props {
   <div
     class="absolute left-0 top-[55%] scale-90 md:top-[20%] xl:left-[10%] xl:top-[25%]"
   >
-    <svg
-      width="64"
-      height="64"
-      fill="none"
-      stroke-width="1.5"
-      color="#ea580c"
-      viewBox="0 0 24 24"
-    >
-      <path
-        fill="#ea580c"
-        stroke="#ea580c"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M12 23a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM3 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM3 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
-      ></path>
-      <path
-        stroke="#ea580c"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M21 7.353v9.294a.6.6 0 0 1-.309.525l-8.4 4.666a.6.6 0 0 1-.582 0l-8.4-4.666A.6.6 0 0 1 3 16.647V7.353a.6.6 0 0 1 .309-.524l8.4-4.667a.6.6 0 0 1 .582 0l8.4 4.667a.6.6 0 0 1 .309.524Z"
-      ></path>
-      <path
-        stroke="#ea580c"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="m3.528 7.294 8.18 4.544a.6.6 0 0 0 .583 0l8.209-4.56M12 21v-9"
-      ></path>
-    </svg>
+  <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 384 512"
+        width="64"
+        height="64"
+        fill="#fbbf24"
+        ><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7c0 0 0 0 0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5L109 384c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8c0 0 0 0 0 0s0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4c0 0 0 0 0 0s0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5l-48.6 0c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8c0 0 0 0 0 0s0 0 0 0s0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80l0-16 160 0 0 16c0 44.2-35.8 80-80 80z"
+        ></path>
+      </svg>
   </div>
   <div class="absolute left-[85%] top-0 scale-75">
     <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 576 512"
       width="64"
       height="64"
-      fill="none"
-      stroke-width="1.5"
-      color="#fbbf24"
-      viewBox="0 0 24 24"
+      fill="#ea580c"
     >
+      <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
       <path
-        stroke="#fbbf24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"
+        d="M96 0C78.3 0 64 14.3 64 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l0 32c0 77.4 55 142 128 156.8l0 67.2c0 17.7 14.3 32 32 32s32-14.3 32-32l0-67.2c12.3-2.5 24.1-6.4 35.1-11.5c-2.1-10.8-3.1-21.9-3.1-33.3c0-80.3 53.8-148 127.3-169.2c.5-2.2 .7-4.5 .7-6.8c0-17.7-14.3-32-32-32L32 160zM432 512a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm47.9-225c4.3 3.7 5.4 9.9 2.6 14.9L452.4 356l35.6 0c5.2 0 9.8 3.3 11.4 8.2s-.1 10.3-4.2 13.4l-96 72c-4.5 3.4-10.8 3.2-15.1-.6s-5.4-9.9-2.6-14.9L411.6 380 376 380c-5.2 0-9.8-3.3-11.4-8.2s.1-10.3 4.2-13.4l96-72c4.5-3.4 10.8-3.2 15.1 .6z"
       ></path>
-      <path
-        fill="#fbbf24"
-        stroke="#fbbf24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M5 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"></path>
-      <path
-        stroke="#fbbf24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M5 10.5V9M5 15v-1.5"></path>
-      <path
-        fill="#fbbf24"
-        stroke="#fbbf24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M5 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM19 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
-      ></path>
-      <path
-        stroke="#fbbf24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M10.5 19H9M15 19h-1.5"></path>
     </svg>
   </div>
   <div
     class="absolute bottom-[5%] left-[60%] scale-[.6] xl:bottom-[15%] xl:left-[35%]"
   >
-    <svg
-      width="64"
-      height="64"
-      fill="none"
-      stroke-width="1.5"
-      color="#a3a3a3"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke="#a3a3a3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M5.164 17c.29-1.049.67-2.052 1.132-3M11.5 7.794A16.838 16.838 0 0 1 14 6.296M4.5 22a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"
-      ></path>
-      <path
-        stroke="#a3a3a3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M9.5 12a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5ZM19.5 7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"
-      ></path>
-    </svg>
+  <i class="fa-solid fa-bolt h-16 text-orange-400"></i>
   </div>
   <!-- Hero Section Heading -->
   <div class="mx-auto mt-5 max-w-xl text-center">

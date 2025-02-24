@@ -8,7 +8,7 @@ import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
 // Define props from Astro
 const {
   title,
-  subTitle,
+  subtitle,
   primaryBtn,
   primaryBtnURL,
   secondaryBtn,
@@ -25,7 +25,7 @@ const {
 // Define TypeScript interface for props
 interface Props {
   title: string;
-  subTitle?: string;
+  subtitle?: string;
   primaryBtn?: string;
   primaryBtnURL?: string;
   secondaryBtn?: string;
@@ -53,11 +53,11 @@ interface Props {
       <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
       <Fragment set:html={title} />
     </h1>
-    {subTitle &&
+    {subtitle &&
     <p
       class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5"
     >
-      {subTitle}
+      {subtitle}
     </p>
   }
     <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
