@@ -23,7 +23,7 @@
     "@preline/dropdown": "^2.6.0",
     "@preline/overlay": "^2.6.0",
     "@preline/tabs": "^2.6.0",
-    "astro": "^5.4.2",
+    "astro": "^5.7.2",
     "astro-carousel": "^3.0.2",
     "astro-compressor": "^1.0.0",
     "astro-masonry": "^1.2.2",
