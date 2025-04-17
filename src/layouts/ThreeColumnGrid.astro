@@ -1,6 +1,5 @@
 ---
-import TitleSection from "@/components/molecules/TitleSection.astro";
-import { SITE, ABOUT_US } from "@data/constants";
+import { ABOUT_US } from "@data/constants";
 
 interface Props {
     title: string
@@ -23,7 +22,7 @@ const { title } = Astro.props
     </h2>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-            values.map(({ name, description, icon }, index) => (
+            values.map(({ name, description, icon }) => (
               <article class="group rounded-lg p-6 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md dark:bg-neutral-800 bg-[rgba(30,30,30,0.2) backdrop-blur-[10px]]">
                 <div class="mb-4 flex items-center space-x-4">
                   <div class="group-hover:bg-blue-200 rounded-full p-2 transition-colors duration-300 ">

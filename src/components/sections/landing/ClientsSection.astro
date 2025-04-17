@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 
 // Define props from Astro
-const { title, subTitle, partners } = Astro.props;
+const { title, subtitle, partners } = Astro.props;
 
 interface Partner {
   logo: any;
@@ -12,7 +12,7 @@ interface Partner {
 
 interface Props {
   title: string;
-  subTitle?: string;
+  subtitle?: string;
   partners: Partner[];
 }
 ---
@@ -27,9 +27,9 @@ interface Props {
     >
       {title}
     </h2>
-    {subTitle && (
+    {subtitle && (
       <p class="text-pretty leading-tight text-neutral-600 dark:text-neutral-400">
-        {subTitle}
+        {subtitle}
       </p>
     )}
   </div>

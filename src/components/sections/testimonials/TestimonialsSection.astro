@@ -4,14 +4,14 @@ import StatsGrid from "../../ui/blocks/StatsGrid.astro";
 
 const {
   title,
-  subTitle,
+  subtitle,
   testimonials,
   statistics
 } = Astro.props;
 
 interface Props {
   title: string;
-  subTitle?: string;
+  subtitle?: string;
   testimonials?: Testimonial[];
   statistics?: StatProps[];
 }
@@ -46,9 +46,9 @@ type StatProps = {
         >
           {title}
         </h2>
-        {subTitle &&
+        {subtitle &&
         <p class="text-neutral-600 dark:text-neutral-400">
-          {subTitle}
+          {subtitle}
         </p>
       }
       </div>

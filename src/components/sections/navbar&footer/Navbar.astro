@@ -2,7 +2,6 @@
 //Import relevant dependencies
 import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
-import Authentication from "../misc/Authentication.astro";
 import enStrings from "@utils/en/navigation.ts";
 import esStrings from "@utils/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
@@ -12,6 +11,7 @@ import LanguagePicker from "@components/ui/LanguagePicker.astro";
 const strings = Astro.currentLocale === "en" ? enStrings : esStrings;
 const homeUrl = Astro.currentLocale === "en" ? "/en" : "/";
 const lang = Astro.currentLocale === "en" ? "en" : "es";
+console.log(lang)
 ---
 
 <!-- Main header component -->

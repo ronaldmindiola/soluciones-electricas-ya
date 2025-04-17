@@ -1,17 +1,16 @@
 ---
 // Import the necessary components
-import { Image } from "astro:assets";
 import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE, ABOUT_US } from "@data/constants";
-const { vision, mission, values, story, team, cta, tagline, sectionTitle, pageTitle, title, subtitle } = ABOUT_US;
+const { vision, mission, values, story, team, cta, pageTitle, title, subtitle } = ABOUT_US;
 // Import the necessary dependencies.
-import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
+/* import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 import ContactIconBlock from "@components/ui/blocks/ContactIconBlock.astro";
 import TextInput from "@components/ui/forms/input/TextInput.astro";
 import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
 import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
-import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
-import Icon from "@components/ui/icons/Icon.astro";
+import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro"; */
+
 import TitleSection from "@/components/molecules/TitleSection.astro";
 import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
 import SectionLayout from "@/layouts/SectionLayout.astro";
@@ -21,9 +20,9 @@ import ParagraphSection from "@/components/molecules/ParagraphSection.astro";
 
 // Define the variables that will be used in this component
 
-const subTitle: string = "Conoce más sobre nosotros";
+/* const subTitle: string = "Conoce más sobre nosotros";
 const formTitle: string = "Por favor llena el formulario";
-const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
+const formSubTitle: string = "Te responderemos en 1-2 días laborables."; */
 ---
 <MainLayout
   title={`${pageTitle} | ${SITE.title}`}

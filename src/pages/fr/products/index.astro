@@ -23,7 +23,7 @@ const product: CollectionEntry<"products">[] = (
 
 // Define variables for page content
 const title: string = "Produits";
-const subTitle: string =
+const subtitle: string =
   "Explorez la durabilité et la précision des outils ScrewFast, conçus aussi bien pour les professionnels que pour les amateurs. Chacun de nos produits est fabriqué avec précision et conçu pour durer, garantissant que vous disposez du bon outil pour chaque tâche.";
 
 // Testimonial data that will be rendered in the component
@@ -92,9 +92,9 @@ const testimonials = [
           {title}
         </h1>
         {
-          subTitle && (
+          subtitle && (
             <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
-              {subTitle}
+              {subtitle}
             </p>
           )
         }
@@ -123,7 +123,7 @@ const testimonials = [
   <!--Features statistics section-->
   <FeaturesStatsAlt
     title="Pourquoi choisir ScrewFast ?"
-    subTitle="Transformez vos idées en résultats tangibles avec les outils ScrewFast. Que vous commenciez par un croquis sur un coin de table ou plongiez dans un projet de construction complet, nos outils sont conçus pour vous aider à construire en toute confiance."
+    subtitle="Transformez vos idées en résultats tangibles avec les outils ScrewFast. Que vous commenciez par un croquis sur un coin de table ou plongiez dans un projet de construction complet, nos outils sont conçus pour vous aider à construire en toute confiance."
     benefits={[
       "Outils robustes et fiables pour des performances durables.",
       "Solutions innovantes adaptées aux besoins de construction modernes.",

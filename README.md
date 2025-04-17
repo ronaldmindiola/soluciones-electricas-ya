@@ -222,7 +222,7 @@ ScrewFast allows for easy customization to suit your specific needs. Here are a 
 Some components have properties defined as TypeScript variables within the component file. Here's an example of customizing the `FeaturesGeneral` component:
 
 ```typescript
-// Define the string variables title and subTitle for the main heading and sub-heading text.
+// Define the string variables title and subtitlefor the main heading and sub-heading text.
 const title: string = "Meeting Industry Demands";
 const subTitle: string =
   "At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors.";

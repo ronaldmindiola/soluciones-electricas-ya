@@ -24,7 +24,7 @@ const {
 const URL = `${Astro.site}`; // Set the website URL in astro.config.mjs
 const author = SITE.author;
 const canonical = Astro.url.href;
-const basePath = Astro.url.pathname;
+/* const basePath = Astro.url.pathname; */
 const ogTitle = OG.title;
 const ogDescription = OG.description;
 const socialImageRes = await getImage({
@@ -39,13 +39,13 @@ const languages: { [key: string]: string } = {
   en: "en",
 };
 
-function createHref(lang: string, prefix: string, path: string): string {
+/* function createHref(prefix: string, path: string): string {
   const hasPrefix = path.startsWith(`/${prefix}/`);
 
   const basePath = hasPrefix ? path : `/${prefix}${path}`;
   const normalizedBasePath = basePath.replace(/\/\/+/g, "/");
   return `${URL.slice(0, -1)}${normalizedBasePath}`;
-}
+} */
 
 const fullPath: string = Astro.url.pathname;
 
@@ -77,6 +77,7 @@ const appleTouchIcon = await getImage({
   structuredData && (
     <script
       type="application/ld+json"
+      is:inline
       set:html={JSON.stringify(structuredData)}
     />
   )
