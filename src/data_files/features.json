@@ -1,26 +1,46 @@
-[
-  {
-    "heading": "Equipos Dedicados",
-    "content": "Nuestros equipos están comprometidos en garantizar que el éxito de tu proyecto sea nuestra prioridad. Recibe asesoramiento experto y resultados excepcionales en cada etapa del proceso.",
-    "svg": "groups",
-    "animation": "slide-up"
-  },
-  {
-    "heading": "Simplicidad y Eficiencia",
-    "content": "Descubre soluciones eléctricas fáciles de implementar y eficientes. En Soluciones Eléctricas YA SAS, mantenemos tus proyectos dentro del presupuesto y entregamos calidad en cada detalle.",
-    "svg": "verified",
-    "animation": "slide-down"
-  },
-  {
-    "heading": "Documentación Completa",
-    "content": "Integra nuestras soluciones con facilidad utilizando nuestra documentación exhaustiva. Facilitamos la adopción de productos con guías claras y detalladas, diseñadas para tu éxito.",
-    "svg": "books",
-    "animation": "slide-up"
-  },
-  {
-    "heading": "Diseño Centrado en el Usuario",
-    "content": "En Soluciones Eléctricas YA SAS, ofrecemos diseños pensados para ti, donde la funcionalidad y la estética se combinan para mejorar tu experiencia en cada proyecto.",
-    "svg": "frame",
-    "animation": "slide-down"
-  }
-]
+{
+  "imagenes": [
+    {
+      "src": "/images/featured/featured-1.jpg",
+      "alt": "Imagen 1"
+    },
+    {
+      "src": "/images/featured/featured-2.jpg",
+      "alt": "Imagen 2"
+    },
+    {
+      "src": "/images/featured/featured-3.jpg",
+      "alt": "Imagen 3"
+    },
+    {
+      "src": "/images/featured/featured-4.jpg",
+      "alt": "Imagen 4"
+    }
+  ],
+  "features": [
+    {
+      "heading": "Equipos Dedicados",
+      "content": "Nuestros equipos están comprometidos en garantizar que el éxito de tu proyecto sea nuestra prioridad. Recibe asesoramiento experto y resultados excepcionales en cada etapa del proceso.",
+      "svg": "groups",
+      "animation": "slide-up"
+    },
+    {
+      "heading": "Simplicidad y Eficiencia",
+      "content": "Descubre soluciones eléctricas fáciles de implementar y eficientes. En Soluciones Eléctricas YA SAS, mantenemos tus proyectos dentro del presupuesto y entregamos calidad en cada detalle.",
+      "svg": "verified",
+      "animation": "slide-down"
+    },
+    {
+      "heading": "Documentación Completa",
+      "content": "Integra nuestras soluciones con facilidad utilizando nuestra documentación exhaustiva. Facilitamos la adopción de productos con guías claras y detalladas, diseñadas para tu éxito.",
+      "svg": "books",
+      "animation": "slide-up"
+    },
+    {
+      "heading": "Diseño Centrado en el Usuario",
+      "content": "En Soluciones Eléctricas YA SAS, ofrecemos diseños pensados para ti, donde la funcionalidad y la estética se combinan para mejorar tu experiencia en cada proyecto.",
+      "svg": "frame",
+      "animation": "slide-down"
+    }
+  ]
+}

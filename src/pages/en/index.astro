@@ -1,0 +1,149 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+
+import faqs from "@data/faqs.json";
+import features from "@data/features.json";
+import pricing from "@data/pricing.json";
+import { partnersData } from "@/data_files/constants";
+
+// Import Images
+import heroImage from "@images/hero-image.avif";
+
+import featuresNavsImage1 from "@images/featuresNavs-image-1.avif";
+import featuresNavsImage2 from "@images/featuresNavs-image-2.avif";
+import featuresNavsImage3 from "@images/featuresNavs-image-3.avif";
+
+const avatarSrcs: Array<string> = [
+  "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+];
+
+
+
+---
+
+<MainLayout lang="en">
+  
+  <HeroSection
+    title=`
+      <span class="block">Soluciones</span>
+      <span class="block">Eléctricas</span>
+    `
+    subtitle="Electrical and lighting innovation at your fingertips. Over 20 years of lighting your ideas."
+    primaryBtn="Discover Our Solutions"
+    primaryBtnURL="/showcase"
+    secondaryBtn="Contact Team"
+    secondaryBtnURL="/contacto"
+    withReview={true}
+    avatars={avatarSrcs}
+    rating=`<span class="font-bold animate-zoomIn">4.5</span> / 5`
+    starCount={4}
+    reviews=`<span class="font-bold animate-zoomIn [animation-delay:0.3s]">Más de 100</span> opiniones`
+    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    src={heroImage}
+  />
+
+  <ClientsSection
+    title="Recomendado por Líderes del Sector"
+    subTitle="Más de 20 años ofreciendo soluciones eléctricas confiables y de calidad."
+    partners={partnersData}
+  />
+
+  <FeaturesGeneral
+    title="Satisfaciendo las Demandas del Sector Eléctrico"
+    subTitle="En Soluciones Eléctricas YA SAS, ofrecemos soluciones innovadoras en iluminación, mobiliario y servicios eléctricos. Nos especializamos en superar los desafíos únicos de cada proyecto, garantizando calidad, eficiencia y tiempos de entrega confiables para ayudarte a alcanzar tus metas."
+    features={features}
+  />
+
+  <FeaturesNavs
+    title={`<span class="block text-yellow-500 dark:text-yellow-400" data-aos="fadeInUp">Soluciones Eléctricas YA</span> adapta sus servicios a tus necesidades de iluminación.`}
+    tabs={[
+      {
+        heading: "Herramientas de Vanguardia",
+        content:
+          "Impulsa tus proyectos con Soluciones Eléctricas YA y mejora la eficiencia en la gestión de instalaciones eléctricas.",
+        svg: "tools",
+        src: featuresNavsImage1,
+        alt: "Herramientas y equipos eléctricos en obra",
+        first: true,
+        // animation: "zoom-in-up",
+      },
+      {
+        heading: "Interfaces Intuitivas",
+        content:
+          "Gestiona tus proyectos con nuestras interfaces intuitivas, organizando y supervisando instalaciones eléctricas de forma ágil.",
+        svg: "dashboard",
+        src: featuresNavsImage2,
+        alt: "Plataforma de gestión intuitiva",
+        
+        // animation: "zoom-in-up",
+      },
+      {
+        heading: "Características Robustas",
+        content:
+          "Maximiza la productividad con características diseñadas para optimizar cada etapa del proceso eléctrico, logrando resultados excepcionales.",
+        svg: "house",
+        src: featuresNavsImage3,
+        alt: "Estructura metálica en construcción",
+        // animation: "zoom-in-up",
+      },
+    ]}
+  />
+
+  <TestimonialsSection
+    title="Impulsa tus Proyectos"
+    subTitle="En Soluciones Eléctricas YA SAS, conectamos eficiencia y calidad para ofrecerte soluciones inmediatas y personalizadas. Experimenta la rapidez y precisión en cada proyecto de iluminación y mobiliario."
+    testimonials={[
+      {
+        content:
+          "Soluciones Eléctricas YA SAS ha transformado la eficiencia de nuestros proyectos. Su implementación fue rápida y sus tiempos de respuesta, son incomparables. ¡Un verdadero cambio en el sector eléctrico!",
+        author: "Daniela Rosas",
+        role: "Directora de Operaciones | IlumTec Inc.",
+        avatarSrc:
+          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      },
+    ]}
+    statistics={[
+      {
+        count: "20+ años",
+        description: "de experiencia en soluciones eléctricas y de iluminación",
+      },
+      {
+        count: "35%",
+        description:
+          "de aumento en la eficiencia de proyectos con nuestras soluciones eléctricas",
+      },
+      {
+        count: "15.3%",
+        description:
+          "reducción en costos de mantenimiento reportada por nuestros clientes de largo plazo",
+      },
+      {
+        count: "2x",
+        description:
+          "mayor rapidez en la implementación de soluciones innovadoras",
+      },
+    ]}
+  />
+
+  <PricingSection pricing={pricing} />
+
+  <FAQ title="Preguntas<br />Frecuentes" faqs={faqs} />
+
+  <HeroSectionAlt
+    title="Iluminamos tus Proyectos"
+    subTitle="En Soluciones Eléctricas YA SAS, ofrecemos soluciones integrales en iluminación y proyectos eléctricos, combinando innovación, eficiencia y calidad para transformar tus espacios. Especializados en la implementación de sistemas de iluminación y mobiliario, brindamos soluciones rápidas y personalizadas para proyectos de instalación, remodelación y mantenimiento, asegurando entornos seguros, eficientes y bien iluminados en cada etapa."
+    url="/contacto"
+  />
+</MainLayout>

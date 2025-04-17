@@ -1,43 +1,26 @@
-interface ImageModule {
-  default: string; // O el tipo que corresponda si es diferente
-}
-// Format the date to a string
-function formatDate(date: Date): string {
-    const options: Intl.DateTimeFormatOptions = {year: 'numeric', month: 'short', day: 'numeric'};
-  
-    return new Date(date).toLocaleDateString(undefined, options);
-  }
+import type { ImageMetadata } from 'astro';
 
-// Capitalize the first letter
-function capitalize(str:string): string {
-  if ( typeof str !== 'string' || str.length === 0 ) {
-    return str;
-  }
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+// Formatear la fecha a una cadena
+const formatDate = (date: Date): string => {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+  return date.toLocaleDateString(undefined, options);
+};
 
-// Get images from a folder
-function getImages(folderPath: string) {
-  const images = import.meta.glob(`${folderPath}/*.{jpg,jpeg,png,avif,webp}`, { eager: true });
-  const imageArray = Object.keys(images).map((path) => {
-    const module = images[path] as ImageModule; // Aserción de tipo
-    const parts = path.split('/');
-    const lastPart = parts.pop(); // Obtener el último elemento
-    const name = lastPart ? lastPart.split('.').shift() : ''; // Verificar si lastPart no es undefined
+// Capitalizar la primera letra
+const capitalize = (str: string): string => 
+  str ? str.charAt(0).toUpperCase() + str.slice(1) : str;
 
-    const altText = name ? name.replace(/-/g, ' ').charAt(0).toUpperCase() + name.slice(1) : '';
+// Obtener imágenes de una carpeta de manera asíncrona
+// utils.ts
+// utils.ts
+const getImages = (folder: string): ImageMetadata[] => {
+  const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/**/*.{jpeg,jpg,png,gif,svg}', { eager: true });
 
-    return {
-      src: module.default,
-      alt: altText,
-      path,
-    };
-  });
+  console.log('Imágenes disponibles:', Object.keys(images));
 
-  // Ordenar las imágenes alfabéticamente si lo deseas
-  imageArray.sort((a, b) => a.path.localeCompare(b.path));
-
-  return imageArray;
-}
+  return Object.entries(images)
+    .filter(([path]) => path.includes(`/src/images/${folder}/`)) // Filtrar por carpeta
+    .map(([, mod]) => mod.default); // Extraer la imagen importada
+};
 
 export { formatDate, capitalize, getImages };

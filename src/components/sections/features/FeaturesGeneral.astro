@@ -12,33 +12,29 @@ interface Feature {
 
 interface Props {
   title?: string;
-  subTitle?: string;
+  subtitle?: string;
   features?: Feature[];
   src?: any;
   alt?: string;
 }
 // Define props from Astro
-const { title, subTitle, src, alt, features } = Astro.props;
+const { title, subtitle, src, alt, features } = Astro.props;
+console.log({src, alt, features})
 ---
 
 <section
   class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
+ >1
   <!-- Block to display the feature image -->
   <div class="relative mb-6 overflow-hidden md:mb-8">
     {
-      src && alt && (
-        <Image
-          src={src}
-          alt={alt}
-          class="h-full w-full object-cover object-center"
-          draggable={"false"}
-          format={"avif"}
-          loading={"eager"}
-        />
+      src && (
+        <div class="absolute inset-0 z-10 flex items-center justify-center overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-800">
+          asasas
+        </div>
       )
     }
-  </div>
+  </div>1
 
   <!-- Displaying the main content consisting of title, subtitle, and several `IconBlock` components -->
   <div class="mt-5 grid gap-8 lg:mt-16 lg:grid-cols-3 lg:gap-12">
@@ -52,9 +48,9 @@ const { title, subTitle, src, alt, features } = Astro.props;
       </h2>
       <!-- Rendering subtitle -->
       {
-        subTitle && (
+        subtitle && (
           <p class="mt-2 text-pretty text-neutral-600 dark:text-neutral-400 md:mt-4">
-            {subTitle}
+            {subtitle}
           </p>
         )
       }

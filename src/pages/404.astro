@@ -5,7 +5,7 @@ import Btn404 from "@components/ui/buttons/Btn404.astro";
 import { SITE } from "@data/constants";
 
 // Define types for translations
-type TranslationKeys = "en" | "fr";
+type TranslationKeys = "en" | "es";
 type Translations = {
   [key in TranslationKeys]: {
     pageTitle: string;
@@ -16,27 +16,27 @@ type Translations = {
 };
 
 // Define variables for page content
-const defaultLang: TranslationKeys = "en";
+const defaultLang: TranslationKeys = "es";
 const translations: Translations = {
+  es: {
+    pageTitle: `Página No Encontrada | ${SITE.title}`,
+    subTitle: "¡Oops! Parece que este circuito no está conectado correctamente.",
+    content:
+      "No te preocupes, estamos aquí para ayudarte a redirigir la energía en la dirección correcta. Regresa y sigue impulsando tus proyectos con confianza.",
+    btnTitle: "Volver",
+  },
   en: {
     pageTitle: `Page Not Found | ${SITE.title}`,
-    subTitle: "Oops, this isn't the tool you were looking for!",
+    subTitle: "Oops! It seems that this circuit is not connected correctly.",
     content:
-      "Don't let this hiccup slow you down. Let's get you back to building your masterpiece.",
+      "Don't worry, we are here to help you redirect the energy in the right direction. Come back and keep pushing your projects forward with confidence.",
     btnTitle: "Go Back",
-  },
-  fr: {
-    pageTitle: `Page Non Trouvée | ${SITE.title}`,
-    subTitle: "Oops, ce n'est pas l'outil que vous recherchiez!",
-    content:
-      "Ne laissez pas ce contretemps vous ralentir. Revenons à la construction de votre chef-d'œuvre.",
-    btnTitle: "Retournez",
   },
 };
 
 // Determine language from the URL
 const urlPath = Astro.url.pathname;
-const langCodeMatch = urlPath.match(/^\/(en|fr)\//);
+const langCodeMatch = urlPath.match(/^\/(es|en)\//);
 const lang: TranslationKeys = langCodeMatch
   ? (langCodeMatch[1] as TranslationKeys)
   : defaultLang;
@@ -66,6 +66,7 @@ const { pageTitle, subTitle, content, btnTitle } = translations[lang];
           {content}
         </p>
         <!-- Display a button that navigates user back to the previous page -->
+         
         <Btn404 title={btnTitle} id="go-back" />
       </div>
     </div>

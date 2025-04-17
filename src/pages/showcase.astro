@@ -1,71 +1,106 @@
 ---
-import { Image } from "astro:assets";
 import MainLayout from "@/layouts/MainLayout.astro";
-import TitleSection from "@/components/ui/blocks/TitleSection.astro";
+import { Masonry } from "astro-masonry";
+import { getImages } from "@/utils/utils";
+import { SHOWCASE } from "@data/constants";
 
-import { SITE } from "@data/constants";
+// Define types for translations
+type TranslationKeys = "en" | "es";
+type Translations = {
+  [key in TranslationKeys]: {
+    title: string;
+    subtitle: string;
+    tagline: string;
+  };
+};
 
-import myImage from '@/images/aerial-view.avif';
+// Define variables for page content
+const defaultLang: TranslationKeys = "es";
+const translations: Translations = {
+  es: {
+    title: `${SHOWCASE.title}`,
+    subtitle: "Soluciones confiables para tus proyectos eléctricos.",
+    tagline:
+      "Soluciones Eléctricas Ya ofrece herramientas eléctricas de alta calidad y servicios especializados para satisfacer todas tus necesidades en proyectos eléctricos. Explora nuestra oferta y contacta a nuestro equipo para obtener productos y servicios de confianza."
+  },
+  en: {
+    title: `Showcase | ${SHOWCASE.title}`,
+    subtitle: "Oops! It seems that this circuit is not connected correctly.",
+    tagline:
+      "Don't worry, we are here to help you redirect the energy in the right direction. Come back and keep pushing your projects forward with confidence.",
+    },
+  };
+
+// Determine language from the URL
+const urlPath = Astro.url.pathname;
+const langCodeMatch = urlPath.match(/^\/(es|en)\//);
+const lang: TranslationKeys = langCodeMatch
+  ? (langCodeMatch[1] as TranslationKeys)
+  : defaultLang;
+  const { imagePath } = SHOWCASE;
+
+  const { title, subtitle, tagline } = translations[lang];
+
+import TitleSection from "@/components/molecules/TitleSection.astro";
+import SectionLayout from "@/layouts/SectionLayout.astro";
 
 // Obtener imágenes dinámicamente
+const images = await getImages(imagePath);
+console.log(images);
 ---
 
+
 <MainLayout 
-  title=`Showcase | ${SITE.title}`
+  title={title}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://solucioneselectricasya.com/showcase",
+    "url": "https://solucioneselectricasya.com/showcase",
+    "description":
+      "¿Tienes preguntas o quieres discutir un proyecto? ¡Lámanos, y let's craft the perfect solution with our tools and services.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://solucioneselectricasya.com",
+      "name": "Soluciones Eléctricas YA",
+      "description":
+        "Soluciones Eléctricas YA ofrece productos de alta calidad y servicios de electricidad y iluminación expertos para atender todas sus necesidades.",
+    },
+    "inLanguage": "es-ES"
+  }}
 >
   <!-- Title Section -->
-  <TitleSection title="Showcase" subTitle="Nuestro trabajo" />
-  
-  
+  <!-- <TitleSection title="Showcase" subtitle="Nuestro trabajo" /> -->
 
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-  <div class="grid gap-4">
-      <div>{myImage}</div>
-          <Image
-            src={myImage}
-            alt="Imagen 1"
-          />
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-      </div>
-  </div>
-  <div class="grid gap-4">
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
-      </div>
-  </div>
-  <div class="grid gap-4">
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-      </div>
-  </div>
-  <div class="grid gap-4">
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
-      </div>
-  </div>
-</div>
+  <SectionLayout>
+    <TitleSection
+      title={title}
+      subtitle={subtitle}
+      tagline={tagline}
+      align="center"
+      class="text-neutral-700 dark:text-neutral-300" />
+  </SectionLayout>
+
+  <SectionLayout>
+    <Masonry
+  breakpointCols={{
+    default: 4,
+    1200: 3,
+    700: 2,
+    500: 1,
+  }}
+  class="flex gap-4 px-4"
+  columnClass=""
+>
+  {images.map((image) => (
+      <img src={image.src} alt={image.src} class="rounded-xl shadow-md mb-4 animate-fade-in animate-delay-100" />
+    ))
+  }
+</Masonry>
+  </SectionLayout>
+
+
+  
 
 </MainLayout>
+

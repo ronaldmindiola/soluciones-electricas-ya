@@ -10,11 +10,16 @@ import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astr
 import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
 import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
+import Title from "@/components/atoms/Title.astro";
+import Subtitle from "@/components/atoms/Subtitle.astro";
+import SectionLayout from "@/layouts/SectionLayout.astro";
+import TwoColumnGrid from "@/layouts/TwoColumnGrid.astro";
+import TitleSection from "@/components/molecules/TitleSection.astro";
 
 const pageTitle: string = `Contacto | ${SITE.title}`;
 // Define the variables that will be used in this component
 const title: string = "Contáctanos";
-const subTitle: string =
+const subtitle: string =
   "¿Tienes preguntas o quieres discutir un proyecto?";
 const formTitle: string = "Por favor llena el formulario";
 const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
@@ -42,28 +47,26 @@ const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
   }}
 >
   <!-- Contact Us -->
-<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-  <div class="mx-auto max-w-2xl lg:max-w-5xl">
-    <div class="text-center">
-      <h1
-        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-      >
-        {title}
-      </h1>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-        {subTitle}
-      </p>
-    </div>
+   <SectionLayout>
+    
+    <!-- Title and Subtitle -->
+    <TitleSection
+      title={title}
+      subtitle={subtitle}
+      class="text-neutral-700 dark:text-neutral-300"
+    />
+    
+   </SectionLayout>
 
-    <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
-      <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
+   <SectionLayout>
+    <TwoColumnGrid>
+      <div slot="col1">
+        <!-- Contenido de la Columna 1 -->
         <h2
           class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300"
         >
           {formTitle}
         </h2>
-        <!-- Form for user input with various input fields.-->
-        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
         <form>
           <fieldset disabled>
             <div class="grid gap-4">
@@ -109,48 +112,52 @@ const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
             </div>
           </fieldset>
         </form>
-        
       </div>
-
-      <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
-      <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
-        <ContactIconBlock
-          heading="Nuestros Servicios"
-          content="Descubre nuestras soluciones en fabricación de mobiliario y servicios eléctricos."
-          isLinkVisible={true}
-          linkTitle="Ver más sobre nuestros servicios"
-          linkURL="#"
-          isArrowVisible={true}
-          ><Icon name="question" />
-        </ContactIconBlock>
-
-        <ContactIconBlock
-          heading="Preguntas Frecuentes"
-    content="Resuelve tus dudas sobre nuestros productos y servicios."
-          isLinkVisible={true}
-          linkTitle="Consultar preguntas frecuentes"
-          linkURL="#"
-          isArrowVisible={true}
-          ><Icon name="chatBubble" />
-        </ContactIconBlock>
-
-        <ContactIconBlock
-          heading="Visita nuestra oficina"
-          content="Soluciones Eléctricas YA SAS"
-          isAddressVisible={true}
-          addressContent="Cra 15 # 72-45, Bogotá, Colombia"
-          ><Icon name="mapPin" />
-        </ContactIconBlock>
-
-        <ContactIconBlock
-          heading="Contáctanos por email"
-          content="Para consultas y cotizaciones, escríbenos a"
-          isLinkVisible={true}
-          linkTitle="contacto@solucioneselectricasya.com"
-          linkURL="#"
-          ><Icon name="envelopeOpen" />
-        </ContactIconBlock>
+      <div slot="col2">
+        <!-- Contenido de la Columna 2 -->
+        <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
+          <ContactIconBlock
+            heading="Nuestros Servicios"
+            content="Descubre nuestras soluciones en fabricación de mobiliario y servicios eléctricos."
+            isLinkVisible={true}
+            linkTitle="Ver más sobre nuestros servicios"
+            linkURL="#"
+            isArrowVisible={true}
+            ><Icon name="question" />
+          </ContactIconBlock>
+  
+          <ContactIconBlock
+            heading="Preguntas Frecuentes"
+          content="Resuelve tus dudas sobre nuestros productos y servicios."
+            isLinkVisible={true}
+            linkTitle="Consultar preguntas frecuentes"
+            linkURL="#"
+            isArrowVisible={true}
+            >
+            <Icon name="chatBubble" />
+          </ContactIconBlock>
+  
+          <ContactIconBlock
+            heading="Visita nuestra oficina"
+            content="Soluciones Eléctricas YA SAS"
+            isAddressVisible={true}
+            addressContent="Cra 15 # 72-45, Bogotá, Colombia"
+            >
+            <Icon name="mapPin" />
+          </ContactIconBlock>
+  
+          <ContactIconBlock
+            heading="Contáctanos por email"
+            content="Para consultas y cotizaciones, escríbenos a"
+            isLinkVisible={true}
+            linkTitle="contacto@solucioneselectricasya.com"
+            linkURL="#"
+            >
+            <Icon name="envelopeOpen" />
+          </ContactIconBlock>
+        </div>
       </div>
-    </div>
-  </div>
+    </TwoColumnGrid>
+   </Section>
+
 </MainLayout>

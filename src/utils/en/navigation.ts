@@ -1,29 +1,29 @@
 // Enlaces para la barra de navegación
 const navBarLinks = [
-  { name: "Inicio", url: "/" },
+  { name: "Index", url: "/en" },
   { name: "Showcase", url: "/showcase" },
-  { name: "Nosotros", url: "/nosotros" },
-  { name: "Contacto", url: "/contacto" },
+  { name: "About Us", url: "/en/about" },
+  { name: "Contact", url: "/en/contact" },
 ];
 
 // Enlaces para el pie de página
 const footerLinks = [
   {
-    section: "Ecosistema",
+    section: "Ecosystem",
     links: [
-      { name: "Documentación", url: "/documentacion" },
-      { name: "Fabricación de Mobiliario", url: "/productos" },
-      { name: "Servicios Eléctricos", url: "/servicios" },
-      { name: "Proyectos Realizados", url: "/proyectos" },
+      { name: "Documentation", url: "/documentation" },
+      { name: "Furniture Manufacturing", url: "/productos" },
+      { name: "Electrical Services", url: "/servicios" },
+      { name: "Realized Projects", url: "/proyectos" },
     ],
   },
   {
-    section: "Empresa",
+    section: "Company",
     links: [
-      { name: "Acerca de Nosotros", url: "/acerca" },
+      { name: "About Us", url: "/about" },
       { name: "Blog", url: "/blog" },
-      { name: "Carreras", url: "/carreras" },
-      { name: "Clientes", url: "/clientes" },
+      { name: "Careers", url: "/careers" },
+      { name: "Clients", url: "/clients" },
     ],
   },
 ];

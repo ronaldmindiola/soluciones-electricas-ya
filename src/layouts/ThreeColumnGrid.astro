@@ -1,0 +1,41 @@
+---
+import TitleSection from "@/components/molecules/TitleSection.astro";
+import { SITE, ABOUT_US } from "@data/constants";
+
+interface Props {
+    title: string
+    values: {
+        name: string
+        description: string
+        icon: string
+    }[]
+}
+const { values } = ABOUT_US;
+const { title } = Astro.props
+
+---
+
+<section class="my-16 space-y-10 p-6 lg:px-8"> 
+    <h2
+      class="text-center text-3xl font-extrabold text-neutral-800 dark:text-neutral-200"
+    >
+        <i class="fa-solid fa-scale-balanced text-orange-400 hidden"></i> {title}
+    </h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+            values.map(({ name, description, icon }, index) => (
+              <article class="group rounded-lg p-6 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md dark:bg-neutral-800 bg-[rgba(30,30,30,0.2) backdrop-blur-[10px]]">
+                <div class="mb-4 flex items-center space-x-4">
+                  <div class="group-hover:bg-blue-200 rounded-full p-2 transition-colors duration-300 ">
+                    <i class={`fa-solid fa-${icon} h-5  text-orange-400`}></i>
+                  </div>
+                  <h3 class="text-2xl font-extrabold text-neutral-800 dark:text-neutral-100">
+                    {name}
+                  </h3>
+                </div>
+                <p class="text-neutral-600 dark:text-neutral-400">{description}</p>
+              </article>
+            ))
+          }
+    </div>
+</section>
